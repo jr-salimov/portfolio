@@ -1,0 +1,36 @@
+.downSide {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1380px;
+  align-items: center;
+
+  .github {
+    &:hover {
+      filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
+        contrast(105%);
+    }
+  }
+
+  .scroll {
+    margin: -55px;
+    transform: rotate(-90deg);
+    font-size: 100%;
+    text-decoration: none;
+    color: #aaa;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    img {
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      img {
+        transform: rotate(90deg) translateY(80%);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

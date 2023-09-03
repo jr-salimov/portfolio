@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .contentWithMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .genInfo {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      gap: 18px;
+
+      .description {
+        font-size: 150%;
+        .link {
+          text-decoration: none;
+          color: #ff9100;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+      .email {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 900;
+        font-size: 200%;
+        &:hover {
+          color: #ff9100;
+          transition: all 1s ease-in-out;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.wrapper {
+  .contentWithMenu {
+    display: flex;
+    align-items: center;
+    .genSkills {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
+      margin-top: -10%;
+      .skillsText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        gap: 18px;
+
+        .small {
+          color: #aaa;
+          font-size: 100%;
+        }
+
+        .title {
+          span {
+            font-size: 280%;
+            &:hover {
+              transition: all 0.3s ease-in-out;
+              color: #ff9100;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .description {
+          font-size: 108%;
+        }
+
+        .link {
+          text-decoration: none;
+          color: #ff9100;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      .langs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 65%;
+        gap: 50px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          display: flex;
+          margin-bottom: 10px;
+          width: 70px;
+          height: 70px;
+          &:hover {
+            transform: translateY(-5px);
+            opacity: 0.5;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .downs {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+  }
+}
