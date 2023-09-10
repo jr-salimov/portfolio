@@ -49,7 +49,7 @@ export default function Projects() {
           <span className={styles.link}>
             <Link to="/home" className={styles.aboutMe}>
               <span>See Projects</span>
-              <img src="/img/arrow.svg" alt="arrow" />
+              <img src={`${process.env.PUBLIC_URL}/img/arrow.svg`} alt="arrow" />
             </Link>
           </span>
         </div>

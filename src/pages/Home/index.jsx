@@ -9,7 +9,7 @@ export default function Home() {
     <div className={styles.wrapper} id="home">
       <TopSide />
       <div className={styles.computer}>
-        <img src="/img/computer.svg" alt="Computer" />
+        <img src={`${process.env.PUBLIC_URL}/img/computer.svg`} alt="Computer" />
       </div>
       <div className={styles.contentWithMenu}>
         <div className={styles.content}>
@@ -50,7 +50,7 @@ export default function Home() {
           <span className={styles.link}>
             <Link to="/about" className={styles.aboutMe}>
               <span>About me</span>
-              <img src="/img/arrow.svg" alt="arrow" />
+              <img src={`${process.env.PUBLIC_URL}/img/arrow.svg`} alt="arrow" />
             </Link>
           </span>
         </div>

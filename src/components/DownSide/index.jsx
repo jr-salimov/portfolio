@@ -27,7 +27,7 @@ export default function DownSide(props) {
       </div>
       <div>
         <Link to={props.next} className={styles.scroll}>
-          <img src="/img/arrow.svg" alt="arrow" />
+          <img src={`${process.env.PUBLIC_URL}/img/arrow.svg`} alt="arrow" />
           Scroll Down
         </Link>
       </div>

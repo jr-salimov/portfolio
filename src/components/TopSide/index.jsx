@@ -6,7 +6,7 @@ export default function topSide() {
     <div className={styles.top}>
       <div className={styles.logo}>
         <Link to="/about">
-          <img width={54} height={54} src="/img/logo.png" alt="logo" />
+          <img width={54} height={54} src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="logo" />
         </Link>
         <span>DVLPR</span>
       </div>
