@@ -1,0 +1,79 @@
+.top {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      &:hover {
+        transform: rotate(360deg);
+        transition: all 0.7s ease-in-out;
+      }
+    }
+
+    span {
+      font-weight: 900;
+      font-size: 35px;
+    }
+  }
+
+  .menu {
+    ul {
+      display: flex;
+      flex-direction: row;
+      li {
+        list-style-type: none;
+        padding: 1.5rem;
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.4rem;
+          font-weight: 900;
+          font-family: monospace;
+
+          &:hover,
+          &:active {
+            color: #ff9100;
+          }
+        }
+      }
+    }
+  }
+  .contacts {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.8rem;
+
+    .github {
+      &:hover {
+        filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
+          contrast(105%);
+      }
+    }
+    .contactsBtn {
+      background-color: transparent;
+      border-radius: 18px;
+      border: 5px solid #fff;
+      color: #fff;
+      font-size: 35px;
+      font-weight: 900;
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+        border: 5px solid transparent;
+      }
+    }
+  }
+}

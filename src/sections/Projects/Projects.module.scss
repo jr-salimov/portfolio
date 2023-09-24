@@ -1,0 +1,58 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .expInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 45vw;
+    gap: 2rem;
+
+    .experience {
+      span {
+        font-size: 4rem;
+        font-weight: 900;
+        &:hover {
+          color: #ff9100;
+        }
+      }
+    }
+
+    .description {
+      font-size: 1.2rem;
+    }
+
+    .link {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 500;
+
+      img {
+        transform: rotate(270deg);
+      }
+
+      .aboutMe {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        span {
+          color: #ff9100;
+        }
+
+        &:hover {
+          opacity: 0.5;
+
+          img {
+            transform: rotate(360deg);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

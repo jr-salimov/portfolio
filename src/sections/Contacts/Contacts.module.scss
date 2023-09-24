@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .genInfo {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    gap: 1rem;
+
+    .description {
+      font-size: 1.25rem;
+      .link {
+        text-decoration: none;
+        color: #ff9100;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+    .email {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 900;
+      font-size: 200%;
+      &:hover {
+        color: #ff9100;
+        transition: all 1s ease-in-out;
+      }
+    }
+  }
+}

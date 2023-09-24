@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .genSkills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: -5rem;
+    .skillsText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50vw;
+      gap: 1rem;
+
+      .small {
+        color: #aaa;
+        font-size: 1rem;
+      }
+
+      .title {
+        span {
+          font-size: 3rem;
+          &:hover {
+            transition: all 0.3s ease-in-out;
+            color: #ff9100;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .link {
+        text-decoration: none;
+        color: #ff9100;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      width: 65vw;
+      gap: 3rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        display: flex;
+        width: 4.5rem;
+        height: 4.5rem;
+        &:hover {
+          transform: translateY(-5px);
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

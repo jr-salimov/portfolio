@@ -1,41 +1,20 @@
-import { createHashRouter, RouterProvider } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Skills from './pages/Skills';
-import Projects from './pages/Projects';
-import Contacts from './pages/Contacts';
-
-const router = createHashRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/home',
-    element: <Home />,
-  },
-  {
-    path: '/about',
-    element: <About />,
-  },
-  {
-    path: '/skills',
-    element: <Skills />,
-  },
-  {
-    path: '/projects',
-    element: <Projects />,
-  },
-  {
-    path: '/contacts',
-    element: <Contacts />,
-  },
-]);
+import Home from './sections/Home';
+import About from './sections/About';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
+import Contacts from './sections/Contacts';
+import Layout from './Layout';
 
 export default function App() {
   return (
     <div className="wrapper">
-      <RouterProvider router={router} />
+      <Layout>
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contacts />
+      </Layout>
     </div>
   );
 }
