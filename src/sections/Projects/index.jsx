@@ -1,12 +1,12 @@
 import styles from './Projects.module.scss';
-import arrow from '../../img/arrow.svg';
+import arrow from '../../images/arrow.svg';
 
 export default function Projects() {
   return (
     <div className={styles.wrapper} id="projects">
       <div className={styles.center}>
         <div className={styles.expInfo}>
-          <span className={styles.experience}>
+          <div className={styles.experience}>
             <span>P</span>
             <span>o</span>
             <span>r</span>
@@ -36,18 +36,18 @@ export default function Projects() {
             <span>c</span>
             <span>t</span>
             <span>s</span>
-          </span>
-          <span className={styles.description}>
+          </div>
+          <div className={styles.description}>
             I have built various different projects to fit different aspects of the client's
             business. If you want to see more examples of my work than the ones showcased in this
             site, please contact me!
-          </span>
-          <span className={styles.link}>
+          </div>
+          <div className={styles.link}>
             <a href="home" className={styles.aboutMe}>
-              <span>See Projects</span>
+              <div>See Projects</div>
               <img src={arrow} alt="arrow" />
             </a>
-          </span>
+          </div>
         </div>
       </div>
     </div>

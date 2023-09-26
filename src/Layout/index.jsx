@@ -1,5 +1,10 @@
-import logo from '../img/logo.png';
+import logo from '../images/logo.png';
 import styles from './Layout.module.scss';
+import github from '../images/Contacts/github.svg';
+import instagram from '../images/Contacts/instagram.svg';
+import linkedin from '../images/Contacts/linkedin.svg';
+import dribble from '../images/Contacts/dribble.svg';
+import discord from '../images/Contacts/discord.svg';
 
 const Layout = ({ children }) => {
   return (
@@ -7,25 +12,16 @@ const Layout = ({ children }) => {
       <div className={styles.top}>
         <div className={styles.logo}>
           <a href="#about">
-            <img width={54} height={54} src={logo} alt="logo" />
+            <img width={40} height={46} src={logo} alt="logo" />
           </a>
+          Portfolio
         </div>
-        <div className={styles.menu}>
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-          </ul>
-        </div>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </nav>
         <div className={styles.contacts}>
           <a href="https://www.github.com/jr-salimov">
             <svg
@@ -52,6 +48,26 @@ const Layout = ({ children }) => {
         </div>
       </div>
       <main> {children} </main>
+      <footer>
+        <div>
+          <a href="https://github.com/jr-salimov">
+            <img src={github} alt="github" />
+          </a>
+          <a href="https://github.com/jr-salimov">
+            <img src={instagram} alt="instagram" />
+          </a>
+          <a href="https://github.com/jr-salimov">
+            <img src={linkedin} alt="linkedin" />
+          </a>
+          <a href="https://github.com/jr-salimov">
+            <img src={dribble} alt="dribble" />
+          </a>
+          <a href="https://github.com/jr-salimov">
+            <img src={discord} alt="discord" />
+          </a>
+        </div>
+        <div>&copy; 2023. Atoullo Salimov</div>
+      </footer>
     </div>
   );
 };

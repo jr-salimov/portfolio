@@ -6,8 +6,8 @@ export default function About() {
       <div className={styles.contentWithMenu}>
         <div className={styles.genInfo}>
           <div className={styles.about}>
-            <span className={styles.title}>
-              <span className={styles.name}>
+            <div className={styles.title}>
+              <div className={styles.name}>
                 <span>H</span>
                 <span>i</span>
                 <span>,</span>
@@ -24,8 +24,8 @@ export default function About() {
                 <span>l</span>
                 <span>o</span>
                 <span>,</span>
-              </span>
-              <span className={styles.position}>
+              </div>
+              <div className={styles.position}>
                 <span>W</span>
                 <span>e</span>
                 <span>b</span>
@@ -39,20 +39,20 @@ export default function About() {
                 <span>p</span>
                 <span>e</span>
                 <span>r</span>
-              </span>
-            </span>{' '}
-            <span className={styles.small}>Front-End Developer / JavaScript & React Fan</span>
+              </div>
+            </div>{' '}
+            <div className={styles.small}>Front-End Developer / JavaScript & React Fan</div>
           </div>
           <div className={styles.description}>
-            <span>Professionally connected with the web development industry.</span>
-            <span>
+            <div>Professionally connected with the web development industry.</div>
+            <div>
               Problem solver, well-organised person, loyal freelancer with high attention to detail.
               Fan of Football, debate games, chess, and coding of course.
-            </span>
-            <span>
+            </div>
+            <div>
               Interested in the entire frontend spectrum and working on ambitious projects with
               interesting people.
-            </span>
+            </div>
           </div>
         </div>
       </div>

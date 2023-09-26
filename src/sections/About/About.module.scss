@@ -18,7 +18,8 @@
 
         .name {
           span {
-            font-size: 2.25rem;
+            font-size: 2rem;
+            font-weight: 900;
 
             &:hover {
               color: #ff9100;
@@ -30,9 +31,11 @@
         .position {
           span {
             font-size: 3rem;
+            font-weight: 900;
+            color: #ff9100;
 
             &:hover {
-              color: #ff9100;
+              color: #fff;
               transition: all 0.3s ease-in-out;
             }
           }

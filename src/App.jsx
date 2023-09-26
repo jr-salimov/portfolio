@@ -7,14 +7,12 @@ import Layout from './Layout';
 
 export default function App() {
   return (
-    <div className="wrapper">
-      <Layout>
-        <Home />
-        <About />
-        <Skills />
-        <Projects />
-        <Contacts />
-      </Layout>
-    </div>
+    <Layout>
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+      <Contacts />
+    </Layout>
   );
 }

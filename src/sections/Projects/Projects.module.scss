@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   .expInfo {
     display: flex;
@@ -9,11 +9,11 @@
     align-items: center;
     text-align: center;
     width: 45vw;
-    gap: 2rem;
+    gap: 25px;
 
     .experience {
       span {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 900;
         &:hover {
           color: #ff9100;
@@ -40,7 +40,7 @@
         align-items: center;
         text-decoration: none;
 
-        span {
+        div {
           color: #ff9100;
         }
 

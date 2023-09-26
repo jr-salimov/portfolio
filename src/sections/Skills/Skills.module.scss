@@ -7,24 +7,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    text-align: center;
-    margin-top: -5rem;
+    gap: 35px;
+
     .skillsText {
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 50vw;
-      gap: 1rem;
+      width: 60vw;
+      gap: 10px;
 
       .small {
         color: #aaa;
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .title {
         span {
           font-size: 3rem;
+          font-weight: 900;
           &:hover {
             transition: all 0.3s ease-in-out;
             color: #ff9100;
@@ -34,7 +35,7 @@
       }
 
       .description {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .link {
@@ -50,11 +51,75 @@
     .langs {
       display: flex;
       flex-wrap: wrap;
-      width: 65vw;
-      gap: 3rem;
-      text-align: center;
+      width: 55vw;
+      gap: 48px;
       justify-content: center;
-      align-items: center;
+      font-size: 1.2rem;
+
+      .html5 a,
+      .css3 a,
+      .bootstrap a,
+      .figma a,
+      .sass a,
+      .js a,
+      .git a,
+      .react a,
+      .node a,
+      .vue a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+          color: #ff9100;
+        }
+      }
+
+      .html5 svg:hover {
+        filter: invert(35%) sepia(81%) saturate(3547%) hue-rotate(344deg) brightness(91%)
+          contrast(94%);
+      }
+
+      .css3 svg:hover {
+        filter: invert(33%) sepia(71%) saturate(8654%) hue-rotate(227deg) brightness(91%)
+          contrast(96%);
+      }
+
+      .bootstrap svg:hover {
+        filter: invert(40%) sepia(30%) saturate(563%) hue-rotate(224deg) brightness(105%)
+          contrast(91%);
+      }
+
+      .figma svg:hover {
+        filter: invert(27%) sepia(162%) saturate(7186%) hue-rotate(0deg) brightness(100%)
+          contrast(103%);
+      }
+
+      .sass svg:hover {
+        filter: invert(45%) sepia(9%) saturate(3476%) hue-rotate(277deg) brightness(99%)
+          contrast(77%);
+      }
+
+      .js svg:hover {
+        filter: invert(76%) sepia(40%) saturate(765%) hue-rotate(11deg) brightness(301%)
+          contrast(107%);
+      }
+
+      .git svg:hover {
+        filter: invert(38%) sepia(43%) saturate(5765%) hue-rotate(341deg) brightness(97%)
+          contrast(95%);
+      }
+
+      .react svg:hover {
+        filter: invert(74%) sepia(44%) saturate(741%) hue-rotate(165deg) brightness(205%)
+          contrast(97%);
+      }
+
+      .node svg:hover {
+        filter: invert(24%) sepia(65%) saturate(320%) hue-rotate(86deg) brightness(97%)
+          contrast(91%);
+      }
 
       svg {
         display: flex;
@@ -62,8 +127,9 @@
         height: 4.5rem;
         &:hover {
           transform: translateY(-5px);
-          opacity: 0.5;
           cursor: pointer;
+          // filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
+          //   contrast(105%);
         }
       }
     }

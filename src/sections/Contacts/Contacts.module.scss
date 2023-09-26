@@ -1,15 +1,15 @@
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   .genInfo {
     display: flex;
     flex-direction: column;
-    width: 35vw;
+    width: 35%;
     gap: 1rem;
 
     .description {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       .link {
         text-decoration: none;
         color: #ff9100;
@@ -18,14 +18,108 @@
         }
       }
     }
+
     .email {
+      display: flex;
+      gap: 18px;
+
       text-decoration: none;
       color: #fff;
       font-weight: 900;
-      font-size: 200%;
+      font-size: 2rem;
       &:hover {
+        filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
+          contrast(105%);
+        transition: all 0.18s ease-in-out;
+      }
+    }
+  }
+  form {
+    fieldset {
+      width: 25rem;
+      border: none;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      font-weight: 600;
+      // background-color: linear-gradient(to bottom, rgba(255, 145, 0, 1), rgba(255, 145, 0, 0));
+      background: radial-gradient(
+        circle at 100%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 145, 0, 1) 1%,
+        rgba(255, 145, 0, 0.18) 55%
+      );
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        input,
+        textarea {
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.18);
+          border: none;
+
+          border-radius: 10px;
+          font-family: monospace;
+          font-weight: 600;
+          font-size: 1.2rem;
+          color: #fff;
+          resize: vertical;
+          box-sizing: border-box;
+          padding: 10px 15px;
+          margin: 8px 0;
+          outline: none;
+        }
+        input {
+          height: 50px;
+          &:focus {
+          }
+        }
+        label {
+          cursor: pointer;
+        }
+        textarea {
+          height: 100px;
+        }
+      }
+      .buttons {
+        display: flex;
+        gap: 25px;
+      }
+      button,
+      input[type='reset'] {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 56px;
+        font-size: 1.2rem;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        gap: 10px;
         color: #ff9100;
-        transition: all 1s ease-in-out;
+        font-weight: 900;
+        font-size: 1.2rem;
+        img {
+          width: 25px;
+          height: 25px;
+        }
+        &:hover {
+          transition-property: all;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 1.8s;
+          background-color: #ff9100;
+          color: #fff;
+          border: 1px solid transparent;
+          img {
+            filter: invert(100%) sepia(18%) saturate(7486%) hue-rotate(176deg) brightness(214%)
+              contrast(115%);
+          }
+        }
       }
     }
   }

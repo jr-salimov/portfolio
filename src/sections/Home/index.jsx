@@ -1,13 +1,10 @@
 import styles from './Home.module.scss';
-import arrow from '../../img/arrow.svg';
-import computer from '../../img/computer.svg';
+import arrow from '../../images/arrow.svg';
+import computer from '../../images/computer.svg';
 
 export default function Home() {
   return (
     <div className={styles.wrapper} id="home">
-      <div className={styles.computer}>
-        <img src={computer} alt="Computer" />
-      </div>
       <div className={styles.content}>
         <span className={styles.job}>
           <span>F</span>
@@ -49,6 +46,9 @@ export default function Home() {
             <img src={arrow} alt="arrow" />
           </a>
         </span>
+      </div>
+      <div className={styles.computer}>
+        <img src={computer} alt="Computer" />
       </div>
     </div>
   );
