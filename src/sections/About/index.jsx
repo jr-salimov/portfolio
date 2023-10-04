@@ -2,7 +2,7 @@ import styles from './About.module.scss';
 
 export default function About() {
   return (
-    <div className={styles.wrapper} id="about">
+    <section className={styles.wrapper} id="about">
       <div className={styles.contentWithMenu}>
         <div className={styles.genInfo}>
           <div className={styles.about}>
@@ -56,6 +56,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

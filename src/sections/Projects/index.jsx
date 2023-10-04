@@ -3,7 +3,7 @@ import arrow from '../../images/arrow.svg';
 
 export default function Projects() {
   return (
-    <div className={styles.wrapper} id="projects">
+    <section className={styles.wrapper} id="projects">
       <div className={styles.center}>
         <div className={styles.expInfo}>
           <div className={styles.experience}>
@@ -50,6 +50,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

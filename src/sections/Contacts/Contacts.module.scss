@@ -63,7 +63,7 @@
           border: none;
 
           border-radius: 10px;
-          font-family: monospace;
+          font-family: 'Poppins', monospace;
           font-weight: 600;
           font-size: 1.2rem;
           color: #fff;
@@ -75,8 +75,6 @@
         }
         input {
           height: 50px;
-          &:focus {
-          }
         }
         label {
           cursor: pointer;
@@ -105,8 +103,8 @@
         font-weight: 900;
         font-size: 1.2rem;
         img {
-          width: 25px;
-          height: 25px;
+          max-width: 25px;
+          max-height: 25px;
         }
         &:hover {
           transition-property: all;

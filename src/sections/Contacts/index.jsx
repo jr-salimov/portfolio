@@ -4,7 +4,7 @@ import mail from '../../images/mail.svg';
 
 export default function Contacts() {
   return (
-    <div className={styles.wrapper} id="contacts">
+    <section className={styles.wrapper} id="contacts">
       <div className={styles.genInfo}>
         <div className={styles.description}>
           What would you do if you had a software expert available at your fingertips?
@@ -78,6 +78,6 @@ export default function Contacts() {
           </div>
         </fieldset>
       </form>
-    </div>
+    </section>
   );
 }

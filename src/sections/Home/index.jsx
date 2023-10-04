@@ -4,7 +4,7 @@ import computer from '../../images/computer.svg';
 
 export default function Home() {
   return (
-    <div className={styles.wrapper} id="home">
+    <section className={styles.wrapper} id="home">
       <div className={styles.content}>
         <span className={styles.job}>
           <span>F</span>
@@ -50,6 +50,6 @@ export default function Home() {
       <div className={styles.computer}>
         <img src={computer} alt="Computer" />
       </div>
-    </div>
+    </section>
   );
 }

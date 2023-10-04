@@ -1,8 +1,17 @@
 import styles from './Skills.module.scss';
+// import html5 from '../../images/Skills/html5.svg';
+// import css3 from '../../images/Skills/css3.svg';
+// import bootstrap from '../../images/Skills/bootstrap.svg';
+// import figma from '../../images/Skills/figma.svg';
+// import sass from '../../images/Skills/sass.svg';
+// import js from '../../images/Skills/js.svg';
+// import git from '../../images/Skills/git.svg';
+// import react from '../../images/Skills/reactjs.svg';
+// import node from '../../images/Skills/nodejs.svg';
 
 export default function Skills() {
   return (
-    <div className={styles.wrapper} id="skills">
+    <section className={styles.wrapper} id="skills">
       <div className={styles.genSkills}>
         <div className={styles.skillsText}>
           <div className={styles.small}>A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.</div>
@@ -158,6 +167,6 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
