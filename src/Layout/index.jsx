@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Layout.module.scss';
 import logo from '../images/logo.png';
 import menuToggle from '../images/hamburger-menu.png';
+import closeToggle from '../images/close.png';
 import githubv from '../images/github.svg';
 // footer elements
 import github from '../images/Contacts/github.svg';
@@ -18,12 +19,23 @@ const Layout = ({ children }) => {
 
   return (
     <div className={styles.layout}>
-      <header className={isOpen ? styles.top.open : styles.top}>
+      <header className={isOpen ? styles.open : styles.top}>
         <div className={styles.logo}>
-          <a href="#about">
-            <img width={40} height={46} src={logo} alt="logo" />
-          </a>
-          Portfolio
+          <div className={styles.logoMain}>
+            <a href="#about">
+              <img width={40} height={46} src={logo} alt="logo" />
+            </a>
+            <div className={styles.logoText}>PORTFOLIO</div>
+          </div>
+
+          <img
+            src={closeToggle}
+            alt="menu-toggle"
+            width={30}
+            height={30}
+            className={styles.closeToggle}
+            onClick={handleToggle}
+          />
         </div>
         <nav>
           <a href="#home">Home</a>
