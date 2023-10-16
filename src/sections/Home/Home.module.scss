@@ -1,52 +1,50 @@
+@import "../../index.scss";
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  @include f-rules(space-around);
+  flex-wrap: wrap;
 
   .content {
-    display: flex;
-    flex-direction: column;
+    @include f-dir(column);
     max-width: 35rem;
     margin-left: 50px;
 
     .job {
       span {
-        font-weight: 900;
-        font-size: 3rem;
+        @include f-props($fz * 2);
 
         &:hover {
+          @include transition;
           transform: translateY(-5px);
-          transition: all 0.3s ease-in-out;
-          color: #ff9100;
+          color: $color-1;
         }
       }
     }
 
     .description {
+      font-size: ($fz - 0.3rem);
       margin-top: 10px;
-      font-size: 1.2rem;
     }
 
     .link {
       text-decoration: none;
-      color: #fff;
+      color: $color-3;
       margin-top: 10px;
       img {
         transform: rotate(270deg);
       }
       .aboutMe {
-        display: flex;
-        align-items: center;
+        @include a-items;
         text-decoration: none;
         span {
-          font-size: 1.2rem;
-          color: #ff9100;
+          font-size: ($fz - 0.3rem);
+          color: $color-1;
         }
         &:hover {
           opacity: 0.5;
           img {
+            @include transition;
             transform: rotate(360deg);
-            transition: all 0.3s ease-in-out;
           }
         }
       }
@@ -60,8 +58,8 @@
     svg {
       .code_graph {
         path {
+          @include transition;
           animation: float 4s ease-in-out infinite;
-          transition: all 0.3s ease-out;
         }
       }
     }

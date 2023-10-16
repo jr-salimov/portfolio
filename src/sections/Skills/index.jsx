@@ -1,4 +1,4 @@
-import styles from './Skills.module.scss';
+import styles from "./Skills.module.scss";
 // import html5 from '../../images/Skills/html5.svg';
 // import css3 from '../../images/Skills/css3.svg';
 // import bootstrap from '../../images/Skills/bootstrap.svg';
@@ -9,42 +9,31 @@ import styles from './Skills.module.scss';
 // import react from '../../images/Skills/reactjs.svg';
 // import node from '../../images/Skills/nodejs.svg';
 
-export default function Skills() {
+export function Skills() {
+  const skillsAndExperience = "Skills & Experience".split("");
   return (
     <section className={styles.wrapper} id="skills">
       <div className={styles.genSkills}>
         <div className={styles.skillsText}>
-          <div className={styles.small}>A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.</div>
+          <div className={styles.small}>
+            A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
+          </div>
           <div className={styles.title}>
-            <span>S</span>
-            <span>k</span>
-            <span>i</span>
-            <span>l</span>
-            <span>l</span>
-            <span>s</span>
-            <span> </span>
-            <span>&</span>
-            <span> </span>
-            <span>E</span>
-            <span>x</span>
-            <span>p</span>
-            <span>e</span>
-            <span>r</span>
-            <span>i</span>
-            <span>e</span>
-            <span>n</span>
-            <span>c</span>
-            <span>e</span>
+            {skillsAndExperience.map((char) => (
+              <span key={Math.random()}>{char}</span>
+            ))}
           </div>
           <div className={styles.description}>
-            The main area of expertise is front end development (client side of the web).
+            The main area of expertise is front end development (client side of
+            the web).
           </div>
           <div className={styles.description}>
-            HTML, CSS, JS, building small and medium web applications with Vue or React, custom
-            plugins, features, animations, and coding interactive layouts.
+            HTML, CSS, JS, building small and medium web applications with Vue
+            or React, custom plugins, features, animations, and coding
+            interactive layouts.
           </div>
           <div className={styles.description}>
-            Visit my{' '}
+            Visit my{" "}
             <a
               href="https://www.linkedin.com/in/tdrdimov/"
               className={styles.link}
@@ -52,7 +41,7 @@ export default function Skills() {
               rel="noreferrer"
             >
               Linkedin
-            </a>{' '}
+            </a>{" "}
             for more details.
           </div>
         </div>
@@ -97,7 +86,6 @@ export default function Skills() {
                 focusable="false"
                 data-prefix="fab"
                 data-icon="figma"
-                class="svg-inline--fa fa-figma fa-w-12"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 384 512"

@@ -1,58 +1,53 @@
+@import '../../index.scss';
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include f-rules;
+  flex-wrap: wrap;
 
   .genInfo {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include f-rules(space-evenly);
     gap: 3rem;
 
     .about {
       text-align: left;
 
       .title {
-        display: flex;
-        flex-direction: column;
+        @include f-dir(column);
 
         .name {
           span {
-            font-size: 2rem;
-            font-weight: 900;
+            @include f-props($fz + 0.5rem);
 
             &:hover {
-              color: #ff9100;
-              transition: all 0.3s ease-in-out;
+              @include transition;
+              color: $color-1;
             }
           }
         }
 
         .position {
           span {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ff9100;
+            @include f-props($fz * 2);
+            color: $color-1;
 
             &:hover {
-              color: #fff;
-              transition: all 0.3s ease-in-out;
+              @include transition;
+              color: $color-3;
             }
           }
         }
       }
       .small {
-        color: #aaa;
-        font-size: 1rem;
+        font-size: ($fz - 0.5rem);
+        color: $color-5;
       }
     }
 
     .description {
-      width: 50vw;
-      display: flex;
-      flex-direction: column;
+      @include f-dir(column);
+      font-size: ($fz - 0.3rem);
+      width: $width-1 - 50vw;
       gap: 1.8rem;
-      font-size: 1.2rem;
       line-height: 1.8;
     }
   }

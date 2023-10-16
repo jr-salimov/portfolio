@@ -1,0 +1,46 @@
+@mixin filter(
+  $invert: 58%,
+  $sepia: 39%,
+  $saturate: 3298%,
+  $hue-rotate: 0deg,
+  $brightness: 150%,
+  $contrast: 105%
+) {
+  filter: invert($invert) sepia($sepia) saturate($saturate)
+    hue-rotate($hue-rotate) brightness($brightness) contrast($contrast);
+}
+
+@mixin justify($jc: center) {
+  display: flex;
+  justify-content: $jc;
+}
+
+@mixin a-items($ai: center) {
+  display: flex;
+  align-items: $ai;
+}
+
+@mixin f-dir($dir: column) {
+  display: flex;
+  flex-direction: $dir;
+}
+
+@mixin f-rules($jc: center, $ai: center) {
+  @include justify($jc);
+  @include a-items($ai);
+}
+
+@mixin column-aic {
+  @include f-dir;
+  @include a-items;
+}
+
+@mixin f-props($fz: 1.5rem, $fw: 900) {
+  font-family: "Poppins", monospace;
+  font-size: $fz;
+  font-weight: $fw;
+}
+
+@mixin transition($trs: 0.3s) {
+  transition: all $trs ease-in-out;
+}

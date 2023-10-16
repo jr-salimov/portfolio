@@ -1,55 +1,51 @@
+@import '../../index.scss';
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include f-rules;
+  flex-wrap: wrap;
 
   .expInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include column-aic;
     text-align: center;
-    width: 45vw;
+    width: $width-1 - 55vw;
     gap: 25px;
 
     .experience {
       span {
-        font-size: 3rem;
-        font-weight: 900;
+        @include f-props($fz * 2);
         &:hover {
-          color: #ff9100;
+          color: $color-1;
         }
       }
     }
 
     .description {
-      font-size: 1.2rem;
+      font-size: ($fz - 0.3rem);
     }
 
     .link {
+      @include f-props($fz - 0.25rem, $fw - 400);
       text-decoration: none;
-      color: #fff;
-      font-size: 1.25rem;
-      font-weight: 500;
+      color: $color-3;
 
       img {
         transform: rotate(270deg);
       }
 
       .aboutMe {
-        display: flex;
-        align-items: center;
+        @include justify;
         text-decoration: none;
 
         div {
-          color: #ff9100;
+          color: $color-1;
         }
 
         &:hover {
           opacity: 0.5;
 
           img {
+            @include transition;
             transform: rotate(360deg);
-            transition: all 0.3s ease-in-out;
           }
         }
       }

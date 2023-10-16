@@ -1,46 +1,42 @@
+@import '../../index.scss';
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include f-rules;
+  flex-wrap: wrap;
 
   .genSkills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include column-aic;
     gap: 35px;
 
     .skillsText {
+      @include column-aic;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 60vw;
+      width: $width-1 - 40vw;
       gap: 10px;
 
       .small {
-        color: #aaa;
-        font-size: 1.2rem;
+        font-size: ($fz - 0.3rem);
+        color: $color-5;
       }
 
       .title {
         span {
-          font-size: 3rem;
-          font-weight: 900;
+          @include f-props($fz * 2);
           &:hover {
-            transition: all 0.3s ease-in-out;
-            color: #ff9100;
+            @include transition;
+            color: $color-1;
             cursor: pointer;
           }
         }
       }
 
       .description {
-        font-size: 1.2rem;
+        font-size: ($fz - 0.3rem);
       }
 
       .link {
         text-decoration: none;
-        color: #ff9100;
+        color: $color-1;
 
         &:hover {
           opacity: 0.5;
@@ -49,12 +45,11 @@
     }
 
     .langs {
-      display: flex;
+      @include justify;
+      font-size: ($fz - 0.3rem);
       flex-wrap: wrap;
-      max-width: 55vw;
+      max-width: $width-1 - 45vw;
       gap: 48px;
-      justify-content: center;
-      font-size: 1.2rem;
 
       .html5 a,
       .css3 a,
@@ -66,62 +61,51 @@
       .react a,
       .node a,
       .vue a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include column-aic;
         text-decoration: none;
-        width: 15%;
+        width: $size - 85%;
         aspect-ratio: 4/3;
         object-fit: contain;
-        color: #fff;
+        color: $color-3;
         &:hover {
-          color: #ff9100;
+          color: $color-1;
         }
       }
 
       .html5 svg:hover {
-        filter: invert(35%) sepia(81%) saturate(3547%) hue-rotate(344deg) brightness(91%)
-          contrast(94%);
+        @include filter(35%, 81%, 3547%, 344deg, 91%, 94%);
       }
 
       .css3 svg:hover {
-        filter: invert(33%) sepia(71%) saturate(8654%) hue-rotate(227deg) brightness(91%)
-          contrast(96%);
+        @include filter(33%, 71%, 8654%, 227deg, 91%, 96%);
       }
 
       .bootstrap svg:hover {
-        filter: invert(40%) sepia(30%) saturate(563%) hue-rotate(224deg) brightness(105%)
-          contrast(91%);
+        @include filter(40%, 30%, 563%, 224deg, 105%, 91%);
       }
 
       .figma svg:hover {
-        filter: invert(27%) sepia(162%) saturate(7186%) hue-rotate(0deg) brightness(100%)
-          contrast(103%);
+        @include filter(27%, 162%, 7186%, 0deg, 100%, 103%);
       }
 
       .sass svg:hover {
-        filter: invert(45%) sepia(9%) saturate(3476%) hue-rotate(277deg) brightness(99%)
-          contrast(77%);
+        @include filter(45%, 9%, 3476%, 277deg, 99%, 77%);
       }
 
       .js svg:hover {
-        filter: invert(76%) sepia(40%) saturate(765%) hue-rotate(11deg) brightness(301%)
-          contrast(107%);
+        @include filter(76%, 40%, 765%, 11deg, 301%, 107%);
       }
 
       .git svg:hover {
-        filter: invert(38%) sepia(43%) saturate(5765%) hue-rotate(341deg) brightness(97%)
-          contrast(95%);
+        @include filter(38%, 43%, 5765%, 341deg, 97%, 95%);
       }
 
       .react svg:hover {
-        filter: invert(74%) sepia(44%) saturate(741%) hue-rotate(165deg) brightness(205%)
-          contrast(97%);
+        @include filter(74%, 44%, 741%, 165deg, 205%, 97%);
       }
 
       .node svg:hover {
-        filter: invert(24%) sepia(65%) saturate(320%) hue-rotate(86deg) brightness(97%)
-          contrast(91%);
+        @include filter(24%, 65%, 320%, 86deg, 97%, 91%);
       }
 
       svg {
@@ -131,8 +115,7 @@
         &:hover {
           transform: translateY(-5px);
           cursor: pointer;
-          // filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
-          //   contrast(105%);
+          // @include filter(58%, 39%, 3298%, 0deg, 150%, 105%);
         }
       }
     }
