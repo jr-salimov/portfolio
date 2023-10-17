@@ -5,6 +5,7 @@ $color-2: transparent;
 $color-3: #fff;
 $color-4: #000;
 $color-5: #aaa;
+$color-6: #222;
 //font props
 $fz-normal: 1.5rem;
 $fz-small: 1.25rem;
@@ -15,9 +16,3 @@ $fw: 900;
 $size: 100%;
 $width-1: 100vw;
 $height-1: 100vh;
-
-@media screen and (max-width: 768px) {
-  $fz-h1: 2rem !important;
-  $fz-h2: 1.5rem !important;
-  $fz-normal: 1rem !important;
-}

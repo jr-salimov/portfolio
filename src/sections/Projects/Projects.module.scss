@@ -1,16 +1,12 @@
 @import "../../index.scss";
 
 .wrapper {
+  @include margin;
   @include f-rules;
   // flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
   gap: 25px;
-  margin: {
-    left: 10px;
-    right: 10px;
-    top: 100px;
-  }
 
   .experience {
     .expEl {
@@ -53,18 +49,18 @@
 }
 
 @media screen and (max-width: 768px) {
+  $fz-h1: 2rem;
+  $fz-h2: 1.5rem;
+  $fz-normal: 1rem;
   .wrapper {
+    @include margin;
     text-align: center;
-    margin: {
-      top: 100px;
-      left: 10px;
-      right: 10px;
-    }
   }
 }
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    width: $width-1 - 55vw;
+    @include margin;
+    max-width: 45%;
   }
 }

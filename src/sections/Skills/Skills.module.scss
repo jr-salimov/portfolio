@@ -19,7 +19,7 @@
 
     .title {
       span {
-        @include f-props($fz-h1);
+        @include f-props($fz-h1, $fw);
         &:hover {
           @include transition;
           color: $color-1;
@@ -100,17 +100,23 @@
 }
 
 @media screen and (max-width: 768px) {
+  $fz-h1: 2rem;
+  $fz-h2: 1.5rem;
+  $fz-normal: 1rem;
+  $fw: 400;
   .wrapper {
-    margin: {
-      top: 100px;
-      left: 10px;
-      right: 10px;
-    }
+    @include margin;
     .langs {
       .skillEl a {
         width: 75px;
         height: 75px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    @include margin;
   }
 }
