@@ -1,41 +1,69 @@
 @import "../../index.scss";
 
 .wrapper {
-  @include f-rules(space-evenly);
+  @include f-rules;
   flex-wrap: wrap;
+  gap: 1rem;
 
-  .genInfo {
-    @include f-dir(column);
-    width: $size - 65%;
-    gap: 1rem;
-
-    .description {
-      font-size: $fz;
-
-      .link {
-        text-decoration: none;
+  .title {
+    @include f-rules;
+    @include f-props($fz-h1);
+    .conTitle {
+      &:hover {
         color: $color-1;
-
-        &:hover {
-          opacity: 0.5;
-        }
       }
     }
+  }
 
-    .email {
-      @include f-props($fz + 0.5rem);
-      display: flex;
+  .description {
+    flex-wrap: wrap;
+    font-size: $fz-normal;
+    margin-bottom: 10px;
+
+    .link {
       text-decoration: none;
-      color: $color-3;
-      gap: 18px;
+      color: $color-1;
 
-      img,
-      span {
-        &:hover {
-          @include filter;
-          transition: all 0.18s ease-in-out;
-        }
+      &:hover {
+        opacity: 0.5;
       }
+    }
+  }
+
+  .email {
+    @include f-props($fz-h2);
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: $color-3;
+    margin-top: 18px;
+
+    .mailIcon {
+      margin-right: 18px;
+    }
+
+    .mailIcon,
+    .mailSpan {
+      &:hover {
+        @include filter;
+        transition: all 0.18s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: {
+      top: 100px;
+      left: 10px;
+      right: 10px;
+    }
+    .title {
+      text-align: left;
+    }
+    .email {
+      font-size: $fz-normal;
     }
   }
 }

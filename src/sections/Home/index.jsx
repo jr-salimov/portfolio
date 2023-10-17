@@ -20,7 +20,7 @@ export function Home() {
         <span className={styles.link}>
           <a href="#about" className={styles.aboutMe}>
             <span>About me</span>
-            <img src={arrow} alt="arrow" style={{ zIndex: -1 }} />
+            <img src={arrow} alt="arrow" className={styles.arrow} />
           </a>
         </span>
       </div>

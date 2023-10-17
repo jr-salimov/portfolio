@@ -1,122 +1,115 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .wrapper {
   @include f-rules;
+  @include column-aic;
+  gap: 35px;
   flex-wrap: wrap;
 
-  .genSkills {
+  .skillsText {
     @include column-aic;
-    gap: 35px;
+    text-align: center;
+    width: $width-1 - 40vw;
+    gap: 10px;
 
-    .skillsText {
-      @include column-aic;
-      text-align: center;
-      width: $width-1 - 40vw;
-      gap: 10px;
+    .small {
+      font-size: ($fz-small);
+      color: $color-5;
+    }
 
-      .small {
-        font-size: ($fz - 0.3rem);
-        color: $color-5;
-      }
-
-      .title {
-        span {
-          @include f-props($fz * 2);
-          &:hover {
-            @include transition;
-            color: $color-1;
-            cursor: pointer;
-          }
-        }
-      }
-
-      .description {
-        font-size: ($fz - 0.3rem);
-      }
-
-      .link {
-        text-decoration: none;
-        color: $color-1;
-
+    .title {
+      span {
+        @include f-props($fz-h1);
         &:hover {
-          opacity: 0.5;
+          @include transition;
+          color: $color-1;
+          cursor: pointer;
         }
       }
     }
 
-    .langs {
-      @include justify;
-      font-size: ($fz - 0.3rem);
-      flex-wrap: wrap;
-      max-width: $width-1 - 45vw;
-      gap: 48px;
+    .description {
+      font-size: ($fz-normal);
+    }
 
-      .html5 a,
-      .css3 a,
-      .bootstrap a,
-      .figma a,
-      .sass a,
-      .js a,
-      .git a,
-      .react a,
-      .node a,
-      .vue a {
-        @include column-aic;
-        text-decoration: none;
-        width: $size - 85%;
-        aspect-ratio: 4/3;
-        object-fit: contain;
-        color: $color-3;
-        &:hover {
-          color: $color-1;
-        }
+    .link {
+      text-decoration: none;
+      color: $color-1;
+
+      &:hover {
+        opacity: 0.5;
       }
+    }
+  }
 
-      .html5 svg:hover {
-        @include filter(35%, 81%, 3547%, 344deg, 91%, 94%);
-      }
+  .langs {
+    @include f-rules;
+    font-size: ($fz-normal);
+    flex-wrap: wrap;
+    max-width: $width-1 - 45vw;
+    gap: 48px;
 
-      .css3 svg:hover {
-        @include filter(33%, 71%, 8654%, 227deg, 91%, 96%);
-      }
-
-      .bootstrap svg:hover {
-        @include filter(40%, 30%, 563%, 224deg, 105%, 91%);
-      }
-
-      .figma svg:hover {
-        @include filter(27%, 162%, 7186%, 0deg, 100%, 103%);
-      }
-
-      .sass svg:hover {
-        @include filter(45%, 9%, 3476%, 277deg, 99%, 77%);
-      }
-
-      .js svg:hover {
-        @include filter(76%, 40%, 765%, 11deg, 301%, 107%);
-      }
-
-      .git svg:hover {
-        @include filter(38%, 43%, 5765%, 341deg, 97%, 95%);
-      }
-
-      .react svg:hover {
-        @include filter(74%, 44%, 741%, 165deg, 205%, 97%);
-      }
-
-      .node svg:hover {
-        @include filter(24%, 65%, 320%, 86deg, 97%, 91%);
-      }
-
-      svg {
-        display: flex;
-        width: 4.5rem;
-        height: 4.5rem;
-        &:hover {
+    .skillEl a {
+      @include column-aic;
+      text-decoration: none;
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      color: $color-3;
+      &:hover {
+        color: $color-1;
+        svg {
           transform: translateY(-5px);
           cursor: pointer;
-          // @include filter(58%, 39%, 3298%, 0deg, 150%, 105%);
         }
+      }
+    }
+
+    #html5 svg:hover {
+      @include filter(35%, 81%, 3547%, 344deg, 91%, 94%);
+    }
+
+    #css3 svg:hover {
+      @include filter(33%, 71%, 8654%, 227deg, 91%, 96%);
+    }
+
+    #figma svg:hover {
+      @include filter(27%, 162%, 7186%, 0deg, 100%, 103%);
+    }
+
+    #sass svg:hover {
+      @include filter(45%, 9%, 3476%, 277deg, 99%, 77%);
+    }
+
+    #js svg:hover {
+      @include filter(76%, 40%, 765%, 11deg, 301%, 107%);
+    }
+
+    #git svg:hover {
+      @include filter(38%, 43%, 5765%, 341deg, 97%, 95%);
+    }
+
+    #react svg:hover {
+      @include filter(74%, 44%, 741%, 165deg, 205%, 97%);
+    }
+
+    #node svg:hover {
+      @include filter(24%, 65%, 320%, 86deg, 97%, 91%);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: {
+      top: 100px;
+      left: 10px;
+      right: 10px;
+    }
+    .langs {
+      .skillEl a {
+        width: 75px;
+        height: 75px;
       }
     }
   }

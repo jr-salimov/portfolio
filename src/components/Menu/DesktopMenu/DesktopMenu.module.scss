@@ -2,7 +2,7 @@
 
 .navigation {
   @include a-items;
-  @include f-props($fz, $fw - 200);
+  @include f-props($fz-normal, $fw - 200);
   position: relative;
   gap: 2.5rem;
   margin: {

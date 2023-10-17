@@ -1,13 +1,13 @@
 @import "../index.scss";
 
 .layout {
-  @include f-props($fz, default);
-  @include f-dir;
+  @include f-props($fz-normal, default);
   color: $color-3;
   line-height: 1.5;
   gap: 25px;
 
   main {
+    @include column-aic;
     margin: {
       left: 18px;
       right: 18px;

@@ -3,15 +3,19 @@
 .wrapper {
   @include f-rules(space-around);
   flex-wrap: wrap;
+  margin: {
+    left: 10px;
+    right: 10px;
+    top: 100px;
+  }
 
   .content {
     @include f-dir(column);
     max-width: 35rem;
-    margin-left: 50px;
 
     .job {
       span {
-        @include f-props($fz * 2);
+        @include f-props($fz-h1);
 
         &:hover {
           @include transition;
@@ -22,7 +26,7 @@
     }
 
     .description {
-      font-size: ($fz - 0.3rem);
+      font-size: ($fz-normal);
       margin-top: 10px;
     }
 
@@ -37,7 +41,7 @@
         @include a-items;
         text-decoration: none;
         span {
-          font-size: ($fz - 0.3rem);
+          font-size: ($fz-normal);
           color: $color-1;
         }
         &:hover {
@@ -46,6 +50,9 @@
             @include transition;
             transform: rotate(360deg);
           }
+        }
+        .arrow {
+          z-index: -1;
         }
       }
     }
@@ -63,5 +70,16 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    margin: {
+      top: 100px;
+    }
+  }
+  .computer {
+    display: none;
   }
 }

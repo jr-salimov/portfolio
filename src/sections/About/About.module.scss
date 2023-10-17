@@ -1,54 +1,71 @@
-@import '../../index.scss';
+@import "../../index.scss";
 
 .wrapper {
-  @include f-rules;
+  @include f-rules(flex-start);
   flex-wrap: wrap;
+  margin: {
+    left: 50px;
+    right: 50px;
+    top: 100px;
+  }
 
-  .genInfo {
-    @include f-rules(space-evenly);
-    gap: 3rem;
+  .title {
+    .name {
+      @include f-props($fz-h2);
 
-    .about {
-      text-align: left;
-
-      .title {
-        @include f-dir(column);
-
-        .name {
-          span {
-            @include f-props($fz + 0.5rem);
-
-            &:hover {
-              @include transition;
-              color: $color-1;
-            }
-          }
-        }
-
-        .position {
-          span {
-            @include f-props($fz * 2);
-            color: $color-1;
-
-            &:hover {
-              @include transition;
-              color: $color-3;
-            }
-          }
-        }
-      }
-      .small {
-        font-size: ($fz - 0.5rem);
-        color: $color-5;
+      &:hover {
+        @include transition;
+        color: $color-1;
       }
     }
 
+    .position {
+      @include f-props($fz-h1);
+      color: $color-1;
+
+      &:hover {
+        @include transition;
+        color: $color-3;
+      }
+    }
+
+    .small {
+      font-size: ($fz-small);
+      color: $color-5;
+    }
+  }
+
+  .description {
+    font-size: ($fz-normal);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 35rem;
+    margin: {
+      top: 100px;
+      left: 10px;
+      right: 10px;
+    }
+    .title {
+      line-height: 1.35;
+    }
+
     .description {
-      @include f-dir(column);
-      font-size: ($fz - 0.3rem);
-      width: $width-1 - 50vw;
-      gap: 1.8rem;
-      line-height: 1.8;
+      margin-top: 25px;
+      font-size: ($fz-normal);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    @include f-rules;
+    gap: 6rem;
+
+    .description {
+      width: 35vw;
     }
   }
 }
