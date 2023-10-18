@@ -4,13 +4,28 @@
 
 body {
   background: $page-bg;
+  color: $color-3;
   min-height: $height-1;
   overflow-x: hidden;
+  transition: background-color $trans-dur, color $trans-dur;
+  display: flex;
+  height: 100vh;
+
+  &:has(.switchInput:checked) {
+    background: invert($page-bg);
+    $color-3: #000;
+  }
+}
+
+input {
+  color: $fg;
+  font: 1rem/1.5 sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
+  border: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }

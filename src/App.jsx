@@ -4,6 +4,7 @@ import { Skills } from "./sections/Skills";
 import { Projects } from "./sections/Projects";
 import { Contacts } from "./sections/Contacts";
 import { Layout } from "./Layout";
+import { Settings } from "./Settings";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Skills />
       <Projects />
       <Contacts />
+      <Settings />
     </Layout>
   );
 }

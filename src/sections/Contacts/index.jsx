@@ -26,7 +26,7 @@ export function Contacts() {
           Instagram
         </a>
         <a
-          href="mailto:jr.salimov@gmail.com"
+          href="https://mailto:jr.salimov@gmail.com"
           target="_blank"
           className={styles.email}
           rel="noreferrer"

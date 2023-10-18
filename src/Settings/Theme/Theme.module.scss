@@ -1,0 +1,158 @@
+@import "../../index.scss";
+
+.wrapper {
+  @include a-items;
+  gap: 81px;
+  /**
+ __        ___    ____  _   _ ___ _   _  ____ 
+ \ \      / / \  |  _ \| \ | |_ _| \ | |/ ___|
+  \ \ /\ / / _ \ | |_) |  \| || ||  \| | |  _ 
+   \ V  V / ___ \|  _ <| |\  || || |\  | |_| |
+    \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____|
+                                              
+*/
+  .switch {
+    margin: auto;
+    position: relative;
+
+    .switchIcon {
+      position: absolute;
+      top: 0.75rem;
+      left: calc(0.75rem * 5);
+      width: 1.5rem;
+      height: 1.5rem;
+      transition: opacity calc($trans-dur / 2), transform calc($trans-dur / 2);
+
+      #lightSwitch {
+        transition-delay: calc($trans-dur / 2);
+        transition-timing-function: $trans-timing-out;
+
+        polyline {
+          fill: aqua;
+          transition-delay: calc($trans-dur / 2);
+          transition-timing-function: $trans-timing-out;
+        }
+      }
+
+      #darkSwitch {
+        opacity: 0;
+        transform: translateX(-1.5rem) rotate(60deg) scale(1.5);
+        transition-timing-function: $trans-timing-in;
+      }
+
+      polyline {
+        transition: stroke-dashoffset calc($trans-dur / 2);
+      }
+    }
+
+    .switchInput {
+      background-color: hsl(210, 90%, 70%);
+      border-radius: 1.5rem;
+      box-shadow: 0 0 0 0.125rem hsla($hue, 90%, 50%, 0),
+        0.125rem 0.125rem 0.25rem hsla($hue, 90%, 10%, 0.2);
+      outline: transparent;
+      position: relative;
+      width: 6rem;
+      height: 3rem;
+      -webkit-appearance: none;
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color $trans-dur $trans-timing;
+
+      &:focus-visible {
+        box-shadow: 0 0 0 0.25rem hsl($hue, 90%, 50%),
+          0.25rem 0.25rem 0.25rem hsla($hue, 90%, 10%, 0.2);
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+      }
+      &::before {
+        background-color: hsl(50, 90%, 50%);
+        border-radius: inherit;
+        mask-image: linear-gradient(
+          120deg,
+          hsl(0, 0%, 0%) 20%,
+          hsla(0, 0%, 0%, 0) 80%
+        );
+        -webkit-mask-image: linear-gradient(
+          120deg,
+          hsl(0, 0%, 0%) 20%,
+          hsla(0, 0%, 0%, 0) 80%
+        );
+        inset: 0;
+        transition: background-color $trans-dur $trans-timing;
+      }
+      &::after {
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 100%;
+        box-shadow: 0.1rem 0.1rem 0rem hsla($hue, 90%, 10%, 0.1);
+        top: 0.25rem;
+        left: 0.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: background-color $trans-dur $trans-timing,
+          transform $trans-dur $trans-timing;
+        z-index: 1;
+      }
+      &:checked {
+        background-color: hsl(290, 90%, 40%);
+
+        &::before {
+          background-color: hsl(220, 90%, 40%);
+        }
+
+        &::after {
+          background-color: hsl(0, 0%, 0%);
+          transform: translateX(3rem);
+        }
+      }
+    }
+
+    .switchInput:checked ~ #lightSwitch,
+    .switchInput:checked ~ #lightSwitch polyline {
+      color: #000;
+      transition-delay: 0s;
+      transition-timing-function: $trans-timing-in;
+    }
+    .switchInput:checked ~ #lightSwitch {
+      opacity: 0;
+      transform: translateX(-1.5rem) rotate(-60deg) scale(1.5);
+
+      .switchInput:checked ~ #lightSwitch polyline {
+        stroke-dashoffset: 300;
+      }
+
+      .switchInput:checked ~ #darkSwitch {
+        opacity: 1;
+        transform: translateX(-3rem);
+        transition-delay: calc($trans-dur / 2);
+        transition-timing-function: $trans-timing-out;
+      }
+    }
+
+    #darkSwitch {
+      opacity: 1;
+      transform: translateX(-3rem) rotate(30deg) scale(1.5);
+      transition-timing-function: $trans-timing-in;
+    }
+
+    .switchSr {
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+    }
+  }
+  /**
+     ____        ___    ____  _   _ ___ _   _  ____ 
+    / /\ \      / / \  |  _ \| \ | |_ _| \ | |/ ___|
+   / /  \ \ /\ / / _ \ | |_) |  \| || ||  \| | |  _ 
+  / /    \ V  V / ___ \|  _ <| |\  || || |\  | |_| |
+ /_/      \_/\_/_/   \_\_| \_\_| \_|___|_| \_|\____|
+                                                    
+*/
+}
