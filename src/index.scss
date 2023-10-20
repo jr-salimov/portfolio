@@ -4,6 +4,9 @@
 
 body {
   background: $page-bg;
+  @mixin dark {
+    color: #000;
+  }
   color: $color-3;
   min-height: $height-1;
   overflow-x: hidden;
@@ -13,7 +16,13 @@ body {
 
   &:has(.switchInput:checked) {
     background: invert($page-bg);
-    $color-3: #000;
+    color: #000;
+    .layout {
+      color: #000;
+      .header {
+        color: #000 !important;
+      }
+    }
   }
 }
 
