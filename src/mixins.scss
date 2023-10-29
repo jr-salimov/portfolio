@@ -35,7 +35,7 @@
   @include a-items;
 }
 
-@mixin f-props($fz: 1.5rem, $fw: 900) {
+@mixin f-props($fz: var(--fz-normal), $fw: var(--fw-xbold)) {
   font-family: "Poppins", monospace;
   font-size: $fz;
   font-weight: $fw;

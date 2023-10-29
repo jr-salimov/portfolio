@@ -2,9 +2,10 @@
 
 .navigation {
   @include a-items;
-  @include f-props($fz-normal, $fw - 200);
+  @include f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
   position: relative;
   gap: 2.5rem;
+
   margin: {
     left: 30px;
     right: 30px;
@@ -12,16 +13,16 @@
   }
 
   .link {
-    color: $color-3;
+    color: var(--secondary);
     position: relative;
     text-decoration: none;
     &::before {
       content: "";
       position: absolute;
       bottom: -2px;
-      width: $size;
+      width: var(--size);
       height: 2px;
-      background-color: $color-3;
+      background-color: var(--secondary);
       transition: transform 0.5s ease-in-out;
       transform: scaleX(0) {
         origin: right;

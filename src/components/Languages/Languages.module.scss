@@ -1,0 +1,16 @@
+@import "../../index.scss";
+
+.langChoice {
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-around;
+
+  .language {
+    @include f-props;
+    background-color: transparent;
+    color: var(--secondary);
+    border: none {
+      radius: 8px;
+    }
+  }
+}

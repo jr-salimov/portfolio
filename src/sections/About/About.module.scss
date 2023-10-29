@@ -7,39 +7,31 @@
 
   .title {
     .name {
-      @include f-props($fz-h2);
-
-      &:hover {
-        @include transition;
-        color: $color-1;
-      }
+      @include f-props(var(fz-h2));
+      @include filter(var(--color-h2), 0, 0);
     }
 
     .position {
-      @include f-props($fz-h1);
-      color: $color-1;
-
-      &:hover {
-        @include transition;
-        color: $color-3;
-      }
+      @include f-props(var(--fz-h1));
     }
 
     .small {
-      font-size: ($fz-small);
-      color: $color-5;
+      font-size: var(--fz-small);
+      color: var(--black-50);
     }
   }
 
   .description {
-    font-size: ($fz-normal);
+    font-size: var(--fz-normal);
   }
 }
 
 @media screen and (max-width: 768px) {
-  $fz-h1: 2rem;
-  $fz-h2: 1.5rem;
-  $fz-normal: 1rem;
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+  }
 
   .wrapper {
     @include margin;
@@ -51,7 +43,7 @@
 
     .description {
       margin-top: 25px;
-      font-size: ($fz-normal);
+      font-size: var(--fz-normal);
     }
   }
 }

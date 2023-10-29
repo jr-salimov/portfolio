@@ -1,22 +1,19 @@
 import styles from "./About.module.scss";
+import { WordToLetters } from "../../components/WordToLetters";
 
 export function About() {
-  const myName = "Hi, I'm Atoullo,".split("");
-  const myPosition = "Web Developer".split("");
   return (
     <section className={styles.wrapper} id="about">
       <div className={styles.title}>
-        {myName.map((char) => (
-          <span key={Math.random()} className={styles.name}>
-            {char}
-          </span>
-        ))}
+        <span className={styles.name}>
+          <WordToLetters words="Hi, I'm Atoullo," />
+        </span>
         <br />
-        {myPosition.map((char) => (
-          <span key={Math.random()} className={styles.position}>
-            {char}
-          </span>
-        ))}
+
+        <span className={styles.position}>
+          <WordToLetters words="Web Developer" />
+        </span>
+
         <br />
         <span className={styles.small}>
           Front-End Developer / JavaScript & React Fan

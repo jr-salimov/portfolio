@@ -1,8 +1,8 @@
 @import "../index.scss";
 
 .layout {
-  @include f-props($fz-normal, default);
-  color: $color-3;
+  @include f-props(var(--fz-normal), default);
+  color: --var(--secondary);
   line-height: 1.5;
   gap: 25px;
 

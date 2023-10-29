@@ -10,25 +10,17 @@
     max-width: 35rem;
 
     .job {
-      span {
-        @include f-props($fz-h1);
-
-        &:hover {
-          @include transition;
-          transform: translateY(-5px);
-          color: $color-1;
-        }
-      }
+      @include f-props(var(--fz-h1));
     }
 
     .description {
-      font-size: ($fz-normal);
+      font-size: (var(--fz-normal));
       margin-top: 10px;
     }
 
     .link {
       text-decoration: none;
-      color: $color-3;
+      color: var(--secondary);
       margin-top: 10px;
       img {
         transform: rotate(270deg);
@@ -37,8 +29,8 @@
         @include a-items;
         text-decoration: none;
         span {
-          font-size: ($fz-normal);
-          color: $color-1;
+          font-size: var(--fz-normal);
+          color: var(--tertiary);
         }
         &:hover {
           opacity: 0.5;
@@ -70,9 +62,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  $fz-h1: 2rem;
-  $fz-h2: 1.5rem;
-  $fz-normal: 1rem;
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+  }
   .wrapper {
     margin-top: 100px;
   }

@@ -1,33 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
 @import "./mixins.scss";
 @import "./sass-variables.scss";
 
 body {
-  background: $page-bg;
-  @mixin dark {
-    color: #000;
-  }
-  color: $color-3;
-  min-height: $height-1;
-  overflow-x: hidden;
-  transition: background-color $trans-dur, color $trans-dur;
+  background: var(--primary-bg);
+  color: var(--secondary);
+  min-height: var(--height-1);
+  // overflow-x: hidden;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
   display: flex;
   height: 100vh;
 
   &:has(.switchInput:checked) {
-    background: invert($page-bg);
-    color: #000;
-    .layout {
-      color: #000;
-      .header {
-        color: #000 !important;
-      }
+    --primary-bg: invert(var(--primary-bg));
+    --secondary: invert(var(--secondary));
+    --color-h1: var(--tertiary);
+    --black-100: #fff;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --color-h2: -1;
+
+    .header {
+      background-color: #fff;
+    }
+
+    a > img {
+      @include filter;
     }
   }
 }
 
 input {
-  color: $fg;
+  color: var(--fg);
   font: 1rem/1.5 sans-serif;
 }
 

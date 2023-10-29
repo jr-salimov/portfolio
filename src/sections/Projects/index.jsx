@@ -1,16 +1,12 @@
 import styles from "./Projects.module.scss";
-import arrow from "../../images/arrow.svg";
+import arrow from "../../assets/images/arrow.svg";
+import { WordToLetters } from "../../components/WordToLetters";
 
 export function Projects() {
-  const expTitle = "Portfolio & Previous Projects".split("");
   return (
     <section className={styles.wrapper} id="projects">
       <div className={styles.experience}>
-        {expTitle.map((char) => (
-          <span key={Math.random()} className={styles.expEl}>
-            {char}
-          </span>
-        ))}
+        <WordToLetters words="Portfolio & Previous Projects" />
       </div>
       <div className={styles.description}>
         I have built various different projects to fit different aspects of the

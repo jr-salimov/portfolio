@@ -8,22 +8,17 @@
 
   .title {
     @include f-rules;
-    @include f-props($fz-h1);
-    .conTitle {
-      &:hover {
-        color: $color-1;
-      }
-    }
+    @include f-props(var(--fz-h1));
   }
 
   .description {
     flex-wrap: wrap;
-    font-size: $fz-normal;
+    font-size: var(--fz-normal);
     margin-bottom: 10px;
 
     .link {
       text-decoration: none;
-      color: $color-1;
+      color: var(--tertiary);
 
       &:hover {
         opacity: 0.5;
@@ -32,19 +27,15 @@
   }
 
   .email {
-    @include f-props($fz-h2);
+    @include f-props(var(--fz-h2));
     display: flex;
     flex-wrap: wrap;
     text-decoration: none;
-    color: $color-3;
+    color: var(--secondary);
     margin-top: 18px;
 
     .mailIcon {
       margin-right: 18px;
-    }
-
-    .mailIcon,
-    .mailSpan {
       &:hover {
         @include filter;
         transition: all 0.18s ease-in-out;
@@ -54,16 +45,21 @@
 }
 
 @media screen and (max-width: 768px) {
-  $fz-h1: 2rem;
-  $fz-h2: 1.5rem;
-  $fz-normal: 1rem;
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+  }
+
   .wrapper {
     @include margin;
+
     .title {
       text-align: left;
     }
+
     .email {
-      font-size: $fz-normal;
+      font-size: var(--fz-normal);
     }
   }
 }

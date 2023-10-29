@@ -7,6 +7,7 @@ const menuItems = [
   { link: "#about", title: "About" },
   { link: "#skills", title: "Skills" },
   { link: "#projects", title: "Projects" },
+  { link: "#contacts", title: "Contacts" },
 ];
 
 export function Menu() {

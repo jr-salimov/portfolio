@@ -3,33 +3,27 @@
 .wrapper {
   @include margin;
   @include f-rules;
-  // flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
   gap: 25px;
 
   .experience {
-    .expEl {
-      @include f-props($fz-h1);
-      &:hover {
-        color: $color-1;
-      }
-    }
+    @include f-props(var(--fz-h1));
   }
 
   .description {
-    font-size: ($fz-normal);
+    font-size: var(--fz-normal);
   }
 
   .link {
     @include f-rules;
-    @include f-props($fz-normal, $fw - 400);
-    color: $color-1;
+    @include f-props(var(--fz-normal), calc(var(--fw-bold) - 400));
+    color: var(--tertiary);
 
     .seeProjects {
       @include f-rules;
       text-decoration: none;
-      color: $color-1;
+      color: var(--tertiary);
     }
 
     .arrow {
@@ -49,9 +43,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  $fz-h1: 2rem;
-  $fz-h2: 1.5rem;
-  $fz-normal: 1rem;
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+  }
+
   .wrapper {
     @include margin;
     text-align: center;

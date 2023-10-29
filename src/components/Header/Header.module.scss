@@ -6,11 +6,12 @@
   position: -webkit-sticky;
   top: 0;
   left: 0;
-  width: $size;
+  width: var(--size);
   height: 75px;
   padding: 25px 45px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
-  box-shadow: 0 15px 15px rgba(18, 18, 18, 0.18);
+  background: var(--black-100);
+  box-shadow: 0 15px 15px var(--box-shadow);
+  z-index: 1;
 
   .logoMain {
     @include a-items;
@@ -21,10 +22,20 @@
     display: none;
   }
 
+  .logoIcon {
+    width: 40px;
+    height: 46px;
+    @include filter;
+  }
+
+  .logo {
+    color: #ff9100;
+  }
+
   .logo,
-  .contacts {
+  .settings {
     @include a-items;
-    @include f-props($fz-normal, $fw - 200);
+    @include f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
     text-decoration: none;
     letter-spacing: 0.1rem;
     margin-top: 10px;
@@ -36,7 +47,7 @@
     @include filter;
   }
 
-  .contacts {
+  .settings {
     @include f-rules;
     position: relative;
     z-index: 1;
@@ -45,28 +56,11 @@
       display: flex;
       margin-right: 18px;
     }
-
-    .contactsBtn {
-      @include f-props($fz-normal, $fw - 200);
-      background-color: $color-2;
-      text-transform: uppercase;
-      border: 5px solid $color-1 {
-        radius: 15px;
-      }
-      color: $color-1;
-      cursor: pointer;
-      padding: 0px 10px;
-      &:hover {
-        color: $color-4;
-        background-color: $color-1;
-        border: 4px solid $color-2;
-      }
-    }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .contacts {
+  .settings {
     display: none !important;
   }
 }

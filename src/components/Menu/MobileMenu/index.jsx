@@ -20,9 +20,6 @@ export function MobileMenu({ items }) {
               {item.title}
             </a>
           ))}
-          <a className={styles.menuItem} key={"#contacts"} href="#contacts">
-            Contacts
-          </a>
         </nav>
       )}
     </section>

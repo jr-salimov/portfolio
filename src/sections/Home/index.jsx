@@ -1,16 +1,14 @@
 import styles from "./Home.module.scss";
-import arrow from "../../images/arrow.svg";
-import computer from "../../images/computer.svg";
+import arrow from "../../assets/images/arrow.svg";
+import computer from "../../assets/images/computer.svg";
+import { WordToLetters } from "../../components/WordToLetters";
 
 export function Home() {
-  const jobTitle = "Front-End Software Developer".split("");
   return (
     <section className={styles.wrapper} id="home">
       <div className={styles.content}>
         <span className={styles.job}>
-          {jobTitle.map((char) => (
-            <span key={Math.random()}>{char}</span>
-          ))}
+          <WordToLetters words="Front-End Software Developer" />
         </span>
         <span className={styles.description}>
           Resolving design problems, building smart user interfaces and useful
