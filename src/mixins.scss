@@ -41,10 +41,6 @@
   font-weight: $fw;
 }
 
-@mixin transition($trs: 0.3s) {
-  transition: all $trs ease-in-out;
-}
-
 @mixin margin {
   margin: {
     top: 100px;

@@ -1,6 +1,5 @@
 import styles from "./Skills.module.scss";
 import { WordToLetters } from "../../components/WordToLetters";
-//importing icons
 import html5 from "../../assets/images/Skills/html5.svg";
 import css3 from "../../assets/images/Skills/css3.svg";
 import figma from "../../assets/images/Skills/figma.svg";
@@ -9,6 +8,7 @@ import js from "../../assets/images/Skills/js.svg";
 import git from "../../assets/images/Skills/git.svg";
 import react from "../../assets/images/Skills/reactjs.svg";
 import node from "../../assets/images/Skills/nodejs.svg";
+import { LINKEDIN_LINK } from "../../links.js";
 
 const langArr = [
   {
@@ -69,7 +69,7 @@ export function Skills() {
           with Vue or React, custom plugins, features, animations, and coding
           interactive layouts. Visit my{" "}
           <a
-            href="https://www.linkedin.com/in/tdrdimov/"
+            href={LINKEDIN_LINK}
             className={styles.link}
             target="_blank"
             rel="noreferrer"

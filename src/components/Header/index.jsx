@@ -2,7 +2,6 @@ import styles from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 import github from "../../assets/images/github.svg";
 import { Menu } from "../Menu";
-import { Theme } from "../ThemeToggler";
 import { Languages } from "../Languages";
 import { GITHUB_LINK } from "../../links.js";
 
@@ -10,9 +9,10 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <a href="#about">
+        <label>
+          <input className={styles.switchInput} type="checkbox" role="switch" />
           <img src={logo} alt="logo" className={styles.logoIcon} />
-        </a>
+        </label>
         <div className={styles.logoText}>PORTFOLIO</div>
       </div>
       <Menu />
@@ -21,7 +21,6 @@ export function Header() {
           <img src={github} alt="github" className={styles.github} />
         </a>
         <Languages />
-        <Theme />
       </div>
     </header>
   );

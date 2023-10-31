@@ -1,6 +1,7 @@
 import styles from "./Contacts.module.scss";
 import mail from "../../assets/images/mail.svg";
 import { WordToLetters } from "../../components/WordToLetters";
+import { INSTAGRAM_LINK, GMAIL_LINK } from "../../links.js";
 
 export function Contacts() {
   return (
@@ -14,7 +15,7 @@ export function Contacts() {
         fingertips? Want to start new project? Or just say hey. You can also
         follow me on{" "}
         <a
-          href="https://www.instagram.com/_jr._sa/"
+          href={INSTAGRAM_LINK}
           target="_blank"
           className={styles.link}
           rel="noreferrer"
@@ -22,18 +23,12 @@ export function Contacts() {
           Instagram
         </a>
         <a
-          href="https://mailto:jr.salimov@gmail.com"
+          href={GMAIL_LINK}
           target="_blank"
           className={styles.email}
           rel="noreferrer"
         >
-          <img
-            src={mail}
-            alt="mail_logo"
-            width={40}
-            height={40}
-            className={styles.mailIcon}
-          />
+          <img src={mail} alt="mail_logo" className={styles.mailIcon} />
           <WordToLetters words="jr.salimov@gmail.com" />
         </a>
       </div>

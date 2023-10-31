@@ -1,8 +1,6 @@
 @import "../../../index.scss";
 
 .menu {
-  @include f-rules;
-  flex-direction: column;
   padding: 0;
   position: absolute;
   top: 0;
@@ -20,9 +18,9 @@
   margin: 0;
   padding: 0.5em 0;
   width: 100%;
-  color: var(--secondary);
-  background: var(--tertiary);
-  box-shadow: 125px 125px 125px 125px var(--tertiary);
+
+  color: var(--menu-toggle);
+  background: var(--menu-toggle-secondary);
 }
 
 .menuButtonContainer {
@@ -38,7 +36,7 @@
 .menuButton::before,
 .menuButton::after {
   display: block;
-  background-color: var(--secondary);
+  background-color: var(--menu-toggle);
   position: absolute;
   width: 30px;
   height: 4px;
@@ -79,7 +77,7 @@
 }
 
 #menuToggle:checked ~ .menu .menuItem {
-  border-bottom: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--menu-toggle);
   height: 6.5rem;
   padding: 0.5rem;
   transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -92,11 +90,10 @@
 .menu {
   @include f-dir;
   margin-top: 75px;
+  border-top: 1px solid var(--menu-toggle);
 
   .menuItem {
-    margin-bottom: 18px;
-    border-bottom: 1px solid var(--secondary);
     text-decoration: none;
-    color: var(--secondary);
+    color: var(--menu-toggle);
   }
 }

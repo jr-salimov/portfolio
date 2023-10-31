@@ -2,7 +2,7 @@
 
 .header {
   @include f-rules(space-between);
-  position: fixed;
+  position: sticky;
   position: -webkit-sticky;
   top: 0;
   left: 0;
@@ -25,11 +25,12 @@
   .logoIcon {
     width: 40px;
     height: 46px;
-    @include filter;
+    background-color: transparent;
   }
 
-  .logo {
-    color: #ff9100;
+  .switchInput {
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .logo,

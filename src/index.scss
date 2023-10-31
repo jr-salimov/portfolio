@@ -18,6 +18,8 @@ body {
     --black-100: #fff;
     --box-shadow: rgba(0, 0, 0, 0.1);
     --color-h2: -1;
+    --menu-toggle: #ff9100;
+    --menu-toggle-secondary: #fff;
 
     .header {
       background-color: #fff;
@@ -25,6 +27,14 @@ body {
 
     a > img {
       @include filter;
+    }
+
+    label > img {
+      @include filter;
+
+      &:hover {
+        @include filter(100, 100, 100, 100deg);
+      }
     }
   }
 }
@@ -45,4 +55,13 @@ input {
 html {
   overflow-y: scroll;
   scroll-behavior: smooth;
+}
+
+svg {
+  .code_graph {
+    path {
+      transition: all 0.3s ease-in-out;
+      animation: float 4s ease-in-out infinite;
+    }
+  }
 }

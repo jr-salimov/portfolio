@@ -4,7 +4,6 @@
   @include f-rules;
   flex-wrap: wrap;
   gap: 1rem;
-  max-width: 35%;
 
   .title {
     @include f-rules;
@@ -29,13 +28,15 @@
   .email {
     @include f-props(var(--fz-h2));
     display: flex;
-    flex-wrap: wrap;
     text-decoration: none;
     color: var(--secondary);
     margin-top: 18px;
 
     .mailIcon {
       margin-right: 18px;
+      width: 40px;
+      height: 40px;
+
       &:hover {
         @include filter;
         transition: all 0.18s ease-in-out;
@@ -53,13 +54,16 @@
 
   .wrapper {
     @include margin;
+    justify-content: flex-start;
 
     .title {
       text-align: left;
     }
-
     .email {
-      font-size: var(--fz-normal);
+      font-size: 10rem;
+    }
+    .mailIcon {
+      display: none;
     }
   }
 }
@@ -67,5 +71,6 @@
 @media screen and (min-width: 768px) {
   .wrapper {
     @include margin;
+    max-width: 35%;
   }
 }

@@ -2,14 +2,12 @@
 
 .wrapper {
   @include f-rules;
-  @include column-aic;
+  flex-direction: column;
   gap: 35px;
   flex-wrap: wrap;
+  width: var(--size);
 
   .skillsText {
-    @include column-aic;
-    text-align: center;
-    width: 45vw;
     gap: 10px;
 
     .small {
@@ -18,13 +16,11 @@
     }
 
     .title {
-      span {
-        @include f-props(var(--fz-h1), var(--fw-xbold));
-        &:hover {
-          @include transition;
-          color: var(--tertiary);
-          cursor: pointer;
-        }
+      @include f-props(var(--fz-h1), var(--fw-xbold));
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        color: var(--tertiary);
+        cursor: pointer;
       }
     }
 
@@ -47,7 +43,6 @@
     font-size: var(--fz-normal);
     flex-wrap: wrap;
     gap: 48px;
-    max-width: calc(var(--width-1) - 60vw);
 
     .skillEl a {
       @include column-aic;
@@ -79,8 +74,13 @@
     --fz-normal: 1rem;
     --fw-xbold: 400;
   }
+
   .wrapper {
     @include margin;
+    .skillsText {
+      text-align: left;
+    }
+
     .langs {
       .skillEl a {
         width: 75px;
@@ -93,5 +93,13 @@
 @media screen and (min-width: 768px) {
   .wrapper {
     @include margin;
+    .skillsText {
+      @include column-aic;
+      text-align: center;
+      width: 45vw;
+    }
+    .langs {
+      max-width: 40vw;
+    }
   }
 }

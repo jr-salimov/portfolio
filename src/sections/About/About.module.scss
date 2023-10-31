@@ -1,13 +1,14 @@
 @import "../../index.scss";
 
 .wrapper {
-  @include margin;
-  @include f-rules(flex-start);
+  width: var(--size);
   flex-wrap: wrap;
 
   .title {
+    width: 35rem;
+
     .name {
-      @include f-props(var(fz-h2));
+      @include f-props(var(--fz-h2));
       @include filter(var(--color-h2), 0, 0);
     }
 
@@ -35,7 +36,7 @@
 
   .wrapper {
     @include margin;
-    max-width: 35rem;
+    width: 35rem;
 
     .title {
       line-height: 1.35;
@@ -50,17 +51,12 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    @include f-rules;
-    gap: 6rem;
+    @include margin;
+    @include f-rules(space-around);
+    width: var(--size);
 
     .description {
-      width: 35vw;
+      width: 35rem;
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .wrapper {
-    @include margin;
   }
 }
