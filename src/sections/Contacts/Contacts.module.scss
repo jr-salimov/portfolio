@@ -1,17 +1,11 @@
 @import "../../index.scss";
 
 .wrapper {
-  @include f-rules;
-  flex-wrap: wrap;
-  gap: 1rem;
-
   .title {
-    @include f-rules;
     @include f-props(var(--fz-h1));
   }
 
   .description {
-    flex-wrap: wrap;
     font-size: var(--fz-normal);
     margin-bottom: 10px;
 
@@ -53,17 +47,22 @@
   }
 
   .wrapper {
-    @include margin;
-    justify-content: flex-start;
+    margin-top: 50px;
 
     .title {
       text-align: left;
     }
-    .email {
-      font-size: 10rem;
-    }
-    .mailIcon {
-      display: none;
+
+    .description {
+      max-width: 90vw;
+
+      .email {
+        --fz-h2: 1.5rem;
+
+        .mailIcon {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -72,5 +71,8 @@
   .wrapper {
     @include margin;
     max-width: 35%;
+    .title {
+      text-align: center;
+    }
   }
 }

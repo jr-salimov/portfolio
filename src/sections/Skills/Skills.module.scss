@@ -1,10 +1,6 @@
 @import "../../index.scss";
 
 .wrapper {
-  @include f-rules;
-  flex-direction: column;
-  gap: 35px;
-  flex-wrap: wrap;
   width: var(--size);
 
   .skillsText {
@@ -50,10 +46,10 @@
       color: var(--secondary);
       text-transform: uppercase;
 
-      img {
+      .langIcon {
         object-fit: contain;
-        width: 75px;
-        height: 75px;
+        width: 70px;
+        height: 70px;
       }
 
       &:hover {
@@ -77,11 +73,31 @@
 
   .wrapper {
     @include margin;
+
     .skillsText {
       text-align: left;
+      max-width: 90vw;
+
+      .title {
+        line-height: 0.8;
+        margin-bottom: 12px;
+      }
+
+      .small,
+      .description {
+        max-width: 90vw;
+      }
     }
 
     .langs {
+      justify-content: flex-start;
+      margin-top: 30px;
+      max-width: 90vw;
+
+      .langName {
+        @include f-props(var(--fz-small));
+      }
+
       .skillEl a {
         width: 75px;
         height: 75px;
@@ -93,6 +109,11 @@
 @media screen and (min-width: 768px) {
   .wrapper {
     @include margin;
+    @include f-rules;
+    flex-direction: column;
+    gap: 35px;
+    flex-wrap: wrap;
+
     .skillsText {
       @include column-aic;
       text-align: center;

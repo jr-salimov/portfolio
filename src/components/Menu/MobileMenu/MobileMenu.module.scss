@@ -1,41 +1,29 @@
 @import "../../../index.scss";
 
 .menu {
-  padding: 0;
+  @include f-dir;
+  border-top: 3px solid var(--menu-toggle);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   margin: 0 {
-    top: 50px;
+    top: 75px;
   }
-}
 
-.menu > .menuItem {
-  @include f-rules;
-  @include f-props;
-  overflow: hidden;
-  margin: 0;
-  padding: 0.5em 0;
-  width: 100%;
-
-  color: var(--menu-toggle);
-  background: var(--menu-toggle-secondary);
-}
-
-.menuButtonContainer {
-  @include f-rules;
-  flex-direction: column;
-}
-
-#menuToggle {
-  display: none;
+  .menuItem {
+    @include f-rules;
+    @include f-props;
+    overflow-y: hidden;
+    text-decoration: none;
+    color: var(--menu-toggle);
+    background: var(--menu-toggle-secondary);
+  }
 }
 
 .menuButton,
 .menuButton::before,
 .menuButton::after {
-  display: block;
   background-color: var(--menu-toggle);
   position: absolute;
   width: 30px;
@@ -44,56 +32,39 @@
   border-radius: 2px;
 }
 
-.menuButton::before {
-  content: "";
-  margin-top: -8px;
+.menuButton {
+  &::before {
+    content: "";
+    margin-top: -8px;
+  }
+  &::after {
+    content: "";
+    margin-top: 8px;
+  }
 }
 
-.menuButton::after {
-  content: "";
-  margin-top: 8px;
-}
+#menuToggle {
+  display: none;
 
-#menuToggle:checked + .menuButtonContainer .menuButton::before {
-  margin-top: 0px;
-  transform: rotate(405deg);
-}
+  &:checked {
+    + .menuButtonContainer .menuButton {
+      background: transparent;
 
-#menuToggle:checked + .menuButtonContainer .menuButton {
-  background: transparent;
-}
+      &::before {
+        margin-top: 0;
+        transform: rotate(405deg);
+      }
 
-#menuToggle:checked + .menuButtonContainer .menuButton::after {
-  margin-top: 0px;
-  transform: rotate(-405deg);
-}
+      &::after {
+        margin-top: 0;
+        transform: rotate(-405deg);
+      }
+    }
 
-#menuToggle ~ .menu .menuItem {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-#menuToggle:checked ~ .menu .menuItem {
-  border-bottom: 1px solid var(--menu-toggle);
-  height: 6.5rem;
-  padding: 0.5rem;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.menu > .menuItem:not(:last-child) {
-  border-bottom: 1px solid var(--black-90);
-}
-
-.menu {
-  @include f-dir;
-  margin-top: 75px;
-  border-top: 1px solid var(--menu-toggle);
-
-  .menuItem {
-    text-decoration: none;
-    color: var(--menu-toggle);
+    ~ .menu .menuItem {
+      border-bottom: 3px solid var(--menu-toggle);
+      height: 18.5vh;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
   }
 }

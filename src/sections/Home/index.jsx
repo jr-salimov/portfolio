@@ -17,7 +17,7 @@ export function Home() {
         </span>
         <span className={styles.link}>
           <a href="#about" className={styles.aboutMe}>
-            <span>About me</span>
+            About me
             <img src={arrow} alt="arrow" className={styles.arrow} />
           </a>
         </span>

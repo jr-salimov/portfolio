@@ -57,9 +57,9 @@ export function Skills() {
   return (
     <section className={styles.wrapper} id="skills">
       <div className={styles.skillsText}>
-        <span className={styles.small}>
+        <div className={styles.small}>
           A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
-        </span>
+        </div>
         <div className={styles.title}>
           <WordToLetters words="Skills & Experience" />
         </div>
@@ -83,8 +83,8 @@ export function Skills() {
         {langArr.map((lang, id) => (
           <div id={styles.eachLang} className={styles.skillEl} key={id}>
             <a href={lang.href}>
-              <img src={lang.src} alt={lang.name} />
-              <div>{lang.name}</div>
+              <img src={lang.src} alt={lang.name} className={styles.langIcon} />
+              <div className={styles.langName}>{lang.name}</div>
             </a>
           </div>
         ))}

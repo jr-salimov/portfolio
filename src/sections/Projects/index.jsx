@@ -13,12 +13,12 @@ export function Projects() {
         client's business. If you want to see more examples of my work than the
         ones showcased in this site, please contact me!
       </div>
-      <span className={styles.link}>
+      <div className={styles.link}>
         <a href="#home" className={styles.seeProjects}>
-          <span>See Projects</span>
+          <div>See Projects</div>
           <img src={arrow} alt="arrow" className={styles.arrow} />
         </a>
-      </span>
+      </div>
     </section>
   );
 }

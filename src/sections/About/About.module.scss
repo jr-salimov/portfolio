@@ -2,11 +2,8 @@
 
 .wrapper {
   width: var(--size);
-  flex-wrap: wrap;
 
   .title {
-    width: 35rem;
-
     .name {
       @include f-props(var(--fz-h2));
       @include filter(var(--color-h2), 0, 0);
@@ -36,14 +33,15 @@
 
   .wrapper {
     @include margin;
-    width: 35rem;
 
-    .title {
-      line-height: 1.35;
+    .name,
+    .position {
+      @include f-props(var(--fz-h2));
+      line-height: 0.8;
     }
 
     .description {
-      margin-top: 25px;
+      max-width: 90vw;
       font-size: var(--fz-normal);
     }
   }
@@ -54,6 +52,10 @@
     @include margin;
     @include f-rules(space-around);
     width: var(--size);
+
+    .title {
+      width: 35rem;
+    }
 
     .description {
       width: 35rem;

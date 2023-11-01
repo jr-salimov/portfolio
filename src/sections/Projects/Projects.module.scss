@@ -1,10 +1,8 @@
 @import "../../index.scss";
 
 .wrapper {
-  @include margin;
   @include f-rules;
   flex-wrap: wrap;
-  gap: 25px;
 
   .experience {
     @include f-props(var(--fz-h1));
@@ -47,9 +45,19 @@
   }
 
   .wrapper {
-    @include margin;
+    margin-top: 110px;
     justify-content: flex-start;
     gap: 5px;
+
+    .experience {
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .experience,
+    .description {
+      width: 90vw;
+    }
   }
 }
 
@@ -58,5 +66,6 @@
     @include margin;
     max-width: 45%;
     text-align: center;
+    gap: 25px;
   }
 }
