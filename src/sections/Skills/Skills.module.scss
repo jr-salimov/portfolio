@@ -1,140 +1,126 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import "../../index.scss";
 
-  .genSkills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
+.wrapper {
+  width: var(--size);
+
+  .skillsText {
+    gap: 10px;
+
+    .small {
+      font-size: var(--fz-small);
+      color: var(--black-50);
+    }
+
+    .title {
+      @include f-props(var(--fz-h1), var(--fw-xbold));
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        color: var(--tertiary);
+        cursor: pointer;
+      }
+    }
+
+    .description {
+      font-size: var(--fz-normal);
+    }
+
+    .link {
+      text-decoration: none;
+      color: var(--tertiary);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .langs {
+    @include f-rules;
+    font-size: var(--fz-normal);
+    flex-wrap: wrap;
+    gap: 48px;
+
+    .skillEl a {
+      @include column-aic;
+      text-decoration: none;
+      color: var(--secondary);
+      text-transform: uppercase;
+
+      .langIcon {
+        object-fit: contain;
+        width: 70px;
+        height: 70px;
+      }
+
+      &:hover {
+        @include filter;
+        svg {
+          transform: translateY(-5px);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+    --fw-xbold: 400;
+  }
+
+  .wrapper {
+    @include margin;
 
     .skillsText {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 60vw;
-      gap: 10px;
-
-      .small {
-        color: #aaa;
-        font-size: 1.2rem;
-      }
+      text-align: left;
+      max-width: 90vw;
 
       .title {
-        span {
-          font-size: 3rem;
-          font-weight: 900;
-          &:hover {
-            transition: all 0.3s ease-in-out;
-            color: #ff9100;
-            cursor: pointer;
-          }
-        }
+        line-height: 0.8;
+        margin-bottom: 12px;
       }
 
+      .small,
       .description {
-        font-size: 1.2rem;
-      }
-
-      .link {
-        text-decoration: none;
-        color: #ff9100;
-
-        &:hover {
-          opacity: 0.5;
-        }
+        max-width: 90vw;
       }
     }
 
     .langs {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 55vw;
-      gap: 48px;
-      justify-content: center;
-      font-size: 1.2rem;
+      justify-content: flex-start;
+      margin-top: 30px;
+      max-width: 90vw;
 
-      .html5 a,
-      .css3 a,
-      .bootstrap a,
-      .figma a,
-      .sass a,
-      .js a,
-      .git a,
-      .react a,
-      .node a,
-      .vue a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        width: 15%;
-        aspect-ratio: 4/3;
-        object-fit: contain;
-        color: #fff;
-        &:hover {
-          color: #ff9100;
-        }
+      .langName {
+        @include f-props(var(--fz-small));
       }
 
-      .html5 svg:hover {
-        filter: invert(35%) sepia(81%) saturate(3547%) hue-rotate(344deg) brightness(91%)
-          contrast(94%);
+      .skillEl a {
+        width: 75px;
+        height: 75px;
       }
+    }
+  }
+}
 
-      .css3 svg:hover {
-        filter: invert(33%) sepia(71%) saturate(8654%) hue-rotate(227deg) brightness(91%)
-          contrast(96%);
-      }
+@media screen and (min-width: 768px) {
+  .wrapper {
+    @include margin;
+    @include f-rules;
+    flex-direction: column;
+    gap: 35px;
+    flex-wrap: wrap;
 
-      .bootstrap svg:hover {
-        filter: invert(40%) sepia(30%) saturate(563%) hue-rotate(224deg) brightness(105%)
-          contrast(91%);
-      }
-
-      .figma svg:hover {
-        filter: invert(27%) sepia(162%) saturate(7186%) hue-rotate(0deg) brightness(100%)
-          contrast(103%);
-      }
-
-      .sass svg:hover {
-        filter: invert(45%) sepia(9%) saturate(3476%) hue-rotate(277deg) brightness(99%)
-          contrast(77%);
-      }
-
-      .js svg:hover {
-        filter: invert(76%) sepia(40%) saturate(765%) hue-rotate(11deg) brightness(301%)
-          contrast(107%);
-      }
-
-      .git svg:hover {
-        filter: invert(38%) sepia(43%) saturate(5765%) hue-rotate(341deg) brightness(97%)
-          contrast(95%);
-      }
-
-      .react svg:hover {
-        filter: invert(74%) sepia(44%) saturate(741%) hue-rotate(165deg) brightness(205%)
-          contrast(97%);
-      }
-
-      .node svg:hover {
-        filter: invert(24%) sepia(65%) saturate(320%) hue-rotate(86deg) brightness(97%)
-          contrast(91%);
-      }
-
-      svg {
-        display: flex;
-        width: 4.5rem;
-        height: 4.5rem;
-        &:hover {
-          transform: translateY(-5px);
-          cursor: pointer;
-          // filter: invert(58%) sepia(39%) saturate(3298%) hue-rotate(0deg) brightness(150%)
-          //   contrast(105%);
-        }
-      }
+    .skillsText {
+      @include column-aic;
+      text-align: center;
+      width: 45vw;
+    }
+    .langs {
+      max-width: 40vw;
     }
   }
 }

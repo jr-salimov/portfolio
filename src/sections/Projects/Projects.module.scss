@@ -1,58 +1,71 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import "../../index.scss";
 
-  .expInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 45vw;
-    gap: 25px;
+.wrapper {
+  @include f-rules;
+  flex-wrap: wrap;
+
+  .experience {
+    @include f-props(var(--fz-h1));
+  }
+
+  .description {
+    font-size: var(--fz-normal);
+  }
+
+  .link {
+    @include f-props(var(--fz-normal), calc(var(--fw-bold) - 400));
+
+    .seeProjects {
+      @include f-rules;
+      text-decoration: none;
+      color: var(--tertiary);
+    }
+
+    .arrow {
+      z-index: -1;
+      transform: rotate(270deg);
+    }
+
+    &:hover {
+      opacity: 0.5;
+
+      .arrow {
+        transition: all 0.3s ease-in-out;
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --fz-h1: 2rem;
+    --fz-h2: 1.5rem;
+    --fz-normal: 1rem;
+  }
+
+  .wrapper {
+    margin-top: 110px;
+    justify-content: flex-start;
+    gap: 5px;
 
     .experience {
-      span {
-        font-size: 3rem;
-        font-weight: 900;
-        &:hover {
-          color: #ff9100;
-        }
-      }
+      line-height: 0.8;
+      margin-bottom: 10px;
     }
 
+    .experience,
     .description {
-      font-size: 1.2rem;
+      width: 90vw;
     }
+  }
+}
 
-    .link {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.25rem;
-      font-weight: 500;
-
-      img {
-        transform: rotate(270deg);
-      }
-
-      .aboutMe {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-
-        div {
-          color: #ff9100;
-        }
-
-        &:hover {
-          opacity: 0.5;
-
-          img {
-            transform: rotate(360deg);
-            transition: all 0.3s ease-in-out;
-          }
-        }
-      }
-    }
+@media screen and (min-width: 768px) {
+  .wrapper {
+    @include margin;
+    max-width: 45%;
+    text-align: center;
+    gap: 25px;
   }
 }

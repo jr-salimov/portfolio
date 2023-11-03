@@ -1,0 +1,36 @@
+:root {
+  //default colors
+  --primary-bg: rgba(33, 33, 33);
+  --secondary: #fff;
+  --tertiary: #ff9100;
+  --black-100: #000;
+  --black-90: #222;
+  --black-50: #aaa;
+  --color-h1: var(--secondary);
+  --color-h2: 0;
+  --box-shadow: rgba(255, 255, 255, 0.1);
+  --menu-toggle: var(--secondary);
+  --menu-toggle-secondary: var(--tertiary);
+
+  //font props
+  --fz-normal: 1.5rem;
+  --fz-small: 1.25rem;
+  --fz-h1: 3rem;
+  --fz-h2: 2rem;
+  --fw-xbold: 900;
+
+  //sizes
+  --size: 100%;
+  --width-1: 100vw;
+  --height-1: 100vh;
+
+  //settings
+  --hue: 223;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 50%);
+  --trans-dur: 0.3s;
+  --trans-timing: cubic-bezier(0.76, 0.05, 0.24, 0.95);
+  --trans-timing-in: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+  --trans-timing-out: cubic-bezier(0.05, 0.76, 0.06, 0.86);
+}

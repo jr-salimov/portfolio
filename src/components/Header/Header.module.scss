@@ -1,0 +1,67 @@
+@import "../../index.scss";
+
+.header {
+  @include f-rules(space-between);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: 75px;
+  padding: 25px 45px;
+  background: var(--black-100);
+  box-shadow: 0 15px 15px var(--box-shadow);
+  z-index: 1;
+
+  .logoMain {
+    @include a-items;
+    gap: 5px;
+  }
+
+  .closeToggle {
+    display: none;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 46px;
+    background-color: transparent;
+  }
+
+  .switchInput {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .logo,
+  .settings {
+    @include a-items;
+    @include f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    gap: 0.5rem;
+  }
+
+  .logo img:hover,
+  .github:hover {
+    @include filter;
+  }
+
+  .settings {
+    @include f-rules;
+    position: relative;
+    z-index: 1;
+
+    .github {
+      display: flex;
+      margin-right: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .settings {
+    display: none !important;
+  }
+}

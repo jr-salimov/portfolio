@@ -1,0 +1,15 @@
+@import "../../index.scss";
+
+.eachLetter {
+  color: var(--tertiary);
+  &:hover {
+    color: var(--secondary);
+    transition: all 0.18s ease-in-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .eachLetter {
+    font-size: var(--fz-h2);
+  }
+}

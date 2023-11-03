@@ -1,33 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+@import "./mixins.scss";
+@import "./sass-variables.scss";
+
 body {
-  margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: rgba(33, 33, 33);
-  min-height: 100vh;
+  background: var(--primary-bg);
+  color: var(--secondary);
+  min-height: var(--height-1);
   // overflow-x: hidden;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+  display: flex;
+  height: 100vh;
+
+  &:has(.switchInput:checked) {
+    --primary-bg: invert(var(--primary-bg));
+    --secondary: invert(var(--secondary));
+    --color-h1: var(--tertiary);
+    --black-100: #fff;
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --color-h2: -1;
+    --menu-toggle: #ff9100;
+    --menu-toggle-secondary: #fff;
+
+    .header {
+      background-color: #fff;
+    }
+
+    a > img {
+      @include filter;
+    }
+
+    label > img {
+      @include filter;
+
+      &:hover {
+        @include filter(100, 100, 100, 100deg);
+      }
+    }
+  }
+}
+
+input {
+  color: var(--fg);
+  font: 1rem/1.5 sans-serif;
 }
 
 * {
   margin: 0;
-  font-family: 'Poppins', monospace;
   padding: 0;
+  border: 0;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
-.layout,
 html {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
-#home,
-#about,
-#skills,
-#projects,
-#contacts {
-  width: 100%;
-  height: 100vh;
+svg {
+  .code_graph {
+    path {
+      transition: all 0.3s ease-in-out;
+      animation: float 4s ease-in-out infinite;
+    }
+  }
 }
