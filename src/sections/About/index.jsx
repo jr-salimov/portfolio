@@ -1,30 +1,29 @@
 import styles from "./About.module.scss";
 import { WordToLetters } from "../../components/WordToLetters";
+import { useAtom } from "jotai";
+import { langAtom } from "../../atom";
 
 export function About() {
+  const [chosenLang, setChosenLang] = useAtom(langAtom);
   return (
     <section className={styles.wrapper} id="about">
       <div className={styles.title}>
         <span className={styles.name}>
-          <WordToLetters words="Hi, I'm Atoullo," />
+          <WordToLetters words={chosenLang.title2_1.defaultMessage} />
         </span>
         <br />
 
         <span className={styles.position}>
-          <WordToLetters words="Web Developer" />
+          <WordToLetters words={chosenLang.title2_2.defaultMessage} />
         </span>
 
         <br />
         <span className={styles.small}>
-          Front-End Developer / JavaScript & React Fan
+          {chosenLang.smallText1.defaultMessage}
         </span>
       </div>{" "}
       <div className={styles.description}>
-        Professionally connected with the web development industry. Problem
-        solver, well-organised person, loyal freelancer with high attention to
-        detail. Fan of Football, debate games, chess, and coding of course.
-        Interested in the entire frontend spectrum and working on ambitious
-        projects with interesting people.
+        {chosenLang.description2.defaultMessage}
       </div>
     </section>
   );

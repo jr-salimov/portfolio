@@ -33,7 +33,7 @@ body {
       @include filter;
 
       &:hover {
-        @include filter(100, 100, 100, 100deg);
+        @include filter(0, 0, 0, 0, 0);
       }
     }
   }
@@ -41,14 +41,14 @@ body {
 
 input {
   color: var(--fg);
-  font: 1rem/1.5 sans-serif;
+  font: 1rem/1.5 var(--main-font);
 }
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--main-font);
   box-sizing: border-box;
 }
 

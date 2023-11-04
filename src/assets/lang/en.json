@@ -20,7 +20,7 @@
     "description": "menu element"
   },
   "title1": {
-    "defaultMessage": "Front-End Software Developer",
+    "defaultMessage": "Front-End Developer",
     "description": "title introducing the page"
   },
   "title2_1": {
@@ -66,6 +66,10 @@
   },
   "description3": {
     "defaultMessage": "The main area of expertise is front end development (client side of the web). HTML, CSS, JS, building small and medium web applications with Vue or React, custom plugins, features, animations, and coding interactive layouts. Visit my",
+    "description": "short description"
+  },
+  "description3_1": {
+    "defaultMessage": "for more details.",
     "description": "short description"
   },
   "description4": {

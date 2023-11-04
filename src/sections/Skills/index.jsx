@@ -9,6 +9,8 @@ import git from "../../assets/images/Skills/git.svg";
 import react from "../../assets/images/Skills/reactjs.svg";
 import node from "../../assets/images/Skills/nodejs.svg";
 import { LINKEDIN_LINK } from "../../links.js";
+import { useAtom } from "jotai";
+import { langAtom } from "../../atom";
 
 const langArr = [
   {
@@ -54,20 +56,18 @@ const langArr = [
 ];
 
 export function Skills() {
+  const [chosenLang, setChosenLang] = useAtom(langAtom);
   return (
     <section className={styles.wrapper} id="skills">
       <div className={styles.skillsText}>
         <div className={styles.small}>
-          A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST.
+          {chosenLang.smallText2.defaultMessage}
         </div>
         <div className={styles.title}>
-          <WordToLetters words="Skills & Experience" />
+          <WordToLetters words={chosenLang.title3.defaultMessage} />
         </div>
         <div className={styles.description}>
-          The main area of expertise is front end development (client side of
-          the web). HTML, CSS, JS, building small and medium web applications
-          with Vue or React, custom plugins, features, animations, and coding
-          interactive layouts. Visit my{" "}
+          {chosenLang.description3.defaultMessage}{" "}
           <a
             href={LINKEDIN_LINK}
             className={styles.link}
@@ -76,7 +76,7 @@ export function Skills() {
           >
             Linkedin
           </a>{" "}
-          for more details.
+          {chosenLang.description3_1.defaultMessage}
         </div>
       </div>
       <div className={styles.langs}>

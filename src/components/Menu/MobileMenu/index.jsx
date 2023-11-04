@@ -3,8 +3,14 @@ import styles from "./MobileMenu.module.scss";
 
 export function MobileMenu({ items }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
   };
 
   return (
@@ -13,10 +19,16 @@ export function MobileMenu({ items }) {
       <label className={styles.menuButtonContainer} htmlFor={styles.menuToggle}>
         <div className={styles.menuButton}></div>
       </label>
-      {isOpen && (
+
+      {isOpen && !isClicked && (
         <nav className={styles.menu}>
           {items.map((item) => (
-            <a className={styles.menuItem} key={item.link} href={item.link}>
+            <a
+              className={styles.menuItem}
+              key={item.link}
+              href={item.link}
+              onClick={handleClick}
+            >
               {item.title}
             </a>
           ))}

@@ -2,18 +2,19 @@ import styles from "./Contacts.module.scss";
 import mail from "../../assets/images/mail.svg";
 import { WordToLetters } from "../../components/WordToLetters";
 import { INSTAGRAM_LINK, GMAIL_LINK } from "../../links.js";
+import { useAtom } from "jotai";
+import { langAtom } from "../../atom";
 
 export function Contacts() {
+  const [chosenLang, setChosenLang] = useAtom(langAtom);
   return (
     <section className={styles.wrapper} id="contacts">
       <div className={styles.title}>
-        <WordToLetters words="Contacts" />
+        <WordToLetters words={chosenLang.title5.defaultMessage} />
       </div>
 
       <div className={styles.description}>
-        What would you do if you had a software expert available at your
-        fingertips? Want to start new project? Or just say hey. You can also
-        follow me on{" "}
+        {chosenLang.description5.defaultMessage}{" "}
         <a
           href={INSTAGRAM_LINK}
           target="_blank"

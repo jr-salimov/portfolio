@@ -20,7 +20,7 @@
     "description": "menu element"
   },
   "title1": {
-    "defaultMessage": "Фронтенд Веб-разработчик",
+    "defaultMessage": "Фронтенд Разработчик",
     "description": "title introducing the page"
   },
   "title2_1": {
@@ -65,6 +65,10 @@
   },
   "description3": {
     "defaultMessage": "Основная область специализации — фронтенд-разработка (клиентская часть сети). HTML, CSS, JS, создание малых и средних веб-приложений с помощью Vue или React, пользовательских плагинов, функций, анимации и кодирования интерактивных макетов. Посетите мой",
+    "description": "short description"
+  },
+  "description3_1": {
+    "defaultMessage": "чтобы узнать подробнее.",
     "description": "short description"
   },
   "description4": {
