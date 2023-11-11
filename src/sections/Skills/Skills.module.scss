@@ -54,10 +54,7 @@
 
       &:hover {
         @include filter;
-        svg {
-          transform: translateY(-5px);
-          cursor: pointer;
-        }
+        cursor: pointer;
       }
     }
   }

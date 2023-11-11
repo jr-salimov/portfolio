@@ -1,17 +1,17 @@
+import { useIntl } from "react-intl";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
-import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
 
 export function Menu() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   const menuItems = [
-    { link: "#home", title: chosenLang.home.defaultMessage },
-    { link: "#about", title: chosenLang.about.defaultMessage },
-    { link: "#skills", title: chosenLang.skills.defaultMessage },
-    { link: "#projects", title: chosenLang.projects.defaultMessage },
-    { link: "#contacts", title: chosenLang.contacts.defaultMessage },
+    { link: "#home", title: intl.formatMessage({ id: "home" }) },
+    { link: "#about", title: intl.formatMessage({ id: "about" }) },
+    { link: "#skills", title: intl.formatMessage({ id: "skills" }) },
+    { link: "#projects", title: intl.formatMessage({ id: "projects" }) },
+    { link: "#contacts", title: intl.formatMessage({ id: "contacts" }) },
   ];
   const { isMobileOrTablet } = useWindowDimensions();
   const MenuView = isMobileOrTablet ? MobileMenu : DesktopMenu;

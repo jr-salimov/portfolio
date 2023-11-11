@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
-
 :root {
   //default colors
   --primary-bg: rgba(33, 33, 33);
@@ -10,7 +8,7 @@
   --black-50: #aaa;
   --color-h1: var(--secondary);
   --color-h2: 0;
-  --box-shadow: rgba(255, 255, 255, 0.1);
+  --box-shadow: rgba(255, 255, 255, 1);
   --menu-toggle: var(--secondary);
   --menu-toggle-secondary: var(--tertiary);
 
@@ -20,7 +18,7 @@
   --fz-h1: 3rem;
   --fz-h2: 2rem;
   --fw-xbold: 900;
-  --main-font: "Poppins", monospace;
+  --main-font: "Roboto", sans-serif;
 
   //sizes
   --size: 100%;

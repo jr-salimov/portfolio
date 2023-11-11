@@ -1,29 +1,29 @@
-import styles from "./About.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WordToLetters } from "../../components/WordToLetters";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
+import styles from "./About.module.scss";
 
 export function About() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="about">
       <div className={styles.title}>
         <span className={styles.name}>
-          <WordToLetters words={chosenLang.title2_1.defaultMessage} />
+          <WordToLetters words={intl.formatMessage({ id: "title2_1" })} />
         </span>
         <br />
 
         <span className={styles.position}>
-          <WordToLetters words={chosenLang.title2_2.defaultMessage} />
+          <WordToLetters words={intl.formatMessage({ id: "title2_2" })} />
         </span>
 
         <br />
         <span className={styles.small}>
-          {chosenLang.smallText1.defaultMessage}
+          <FormattedMessage id="smallText1" />
         </span>
       </div>{" "}
       <div className={styles.description}>
-        {chosenLang.description2.defaultMessage}
+        <FormattedMessage id="description2" />
       </div>
     </section>
   );

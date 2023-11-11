@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useAtom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 import styles from "./MobileMenu.module.scss";
 
+const menuAtom = atomWithStorage("menu", false);
 export function MobileMenu({ items }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [isOpen, setIsOpen] = useAtom(menuAtom);
+  const [isClicked, setIsClicked] = useAtom(menuAtom);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -15,12 +17,18 @@ export function MobileMenu({ items }) {
 
   return (
     <section className={styles.topNav}>
-      <input id={styles.menuToggle} type="checkbox" onClick={handleToggle} />
+      <input
+        id={styles.menuToggle}
+        type="checkbox"
+        onClick={handleToggle}
+        checked={isClicked}
+        readOnly
+      />
       <label className={styles.menuButtonContainer} htmlFor={styles.menuToggle}>
         <div className={styles.menuButton}></div>
       </label>
 
-      {isOpen && !isClicked && (
+      {isOpen && (
         <nav className={styles.menu}>
           {items.map((item) => (
             <a

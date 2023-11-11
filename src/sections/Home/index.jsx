@@ -1,24 +1,24 @@
-import styles from "./Home.module.scss";
-import arrow from "../../assets/images/arrow.svg";
-import computer from "../../assets/images/computer.svg";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WordToLetters } from "../../components/WordToLetters";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
+import styles from "./Home.module.scss";
+import computer from "../../assets/images/computer.svg";
+import arrow from "../../assets/images/arrow.svg";
 
 export function Home() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="home">
       <div className={styles.content}>
         <span className={styles.job}>
-          <WordToLetters words={chosenLang.title1.defaultMessage} />
+          <WordToLetters words={intl.formatMessage({ id: "title1" })} />
         </span>
         <span className={styles.description}>
-          {chosenLang.description1.defaultMessage}
+          <FormattedMessage id="description1" />
         </span>
         <span className={styles.link}>
           <a href="#about" className={styles.aboutMe}>
-            {chosenLang.aboutMe.defaultMessage}
+            <FormattedMessage id="aboutMe" />
             <img src={arrow} alt="arrow" className={styles.arrow} />
           </a>
         </span>

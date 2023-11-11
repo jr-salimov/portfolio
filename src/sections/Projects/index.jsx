@@ -1,22 +1,24 @@
+import { FormattedMessage, useIntl } from "react-intl";
+import { WordToLetters } from "../../components/WordToLetters";
 import styles from "./Projects.module.scss";
 import arrow from "../../assets/images/arrow.svg";
-import { WordToLetters } from "../../components/WordToLetters";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
 
 export function Projects() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="projects">
       <div className={styles.experience}>
-        <WordToLetters words={chosenLang.title4.defaultMessage} />
+        <WordToLetters words={intl.formatMessage({ id: "title4" })} />
       </div>
       <div className={styles.description}>
-        {chosenLang.description4.defaultMessage}
+        <FormattedMessage id="description4" />
       </div>
       <div className={styles.link}>
         <a href="#home" className={styles.seeProjects}>
-          <div>{chosenLang.seeProjects.defaultMessage}</div>
+          <div>
+            <FormattedMessage id="seeProjects" />
+          </div>
           <img src={arrow} alt="arrow" className={styles.arrow} />
         </a>
       </div>

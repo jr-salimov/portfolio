@@ -1,20 +1,20 @@
-import styles from "./Contacts.module.scss";
-import mail from "../../assets/images/mail.svg";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WordToLetters } from "../../components/WordToLetters";
 import { INSTAGRAM_LINK, GMAIL_LINK } from "../../links.js";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
+import styles from "./Contacts.module.scss";
+import mail from "../../assets/images/mail.svg";
 
 export function Contacts() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="contacts">
       <div className={styles.title}>
-        <WordToLetters words={chosenLang.title5.defaultMessage} />
+        <WordToLetters words={intl.formatMessage({ id: "title5" })} />
       </div>
 
       <div className={styles.description}>
-        {chosenLang.description5.defaultMessage}{" "}
+        <FormattedMessage id="description5" />{" "}
         <a
           href={INSTAGRAM_LINK}
           target="_blank"

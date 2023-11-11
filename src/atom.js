@@ -1,4 +1,5 @@
-import { atom } from "jotai";
-import en from "./assets/lang/en.json";
+import { atomWithStorage } from "jotai/utils";
+import { LOCALES } from "./assets/i18n/locales";
 
-export const langAtom = atom(en);
+export const langAtom = atomWithStorage("locale", LOCALES.ENGLISH);
+export const langName = atomWithStorage("language", "EN");

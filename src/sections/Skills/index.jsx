@@ -1,5 +1,7 @@
-import styles from "./Skills.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WordToLetters } from "../../components/WordToLetters";
+import { LINKEDIN_LINK } from "../../links.js";
+import styles from "./Skills.module.scss";
 import html5 from "../../assets/images/Skills/html5.svg";
 import css3 from "../../assets/images/Skills/css3.svg";
 import figma from "../../assets/images/Skills/figma.svg";
@@ -8,9 +10,6 @@ import js from "../../assets/images/Skills/js.svg";
 import git from "../../assets/images/Skills/git.svg";
 import react from "../../assets/images/Skills/reactjs.svg";
 import node from "../../assets/images/Skills/nodejs.svg";
-import { LINKEDIN_LINK } from "../../links.js";
-import { useAtom } from "jotai";
-import { langAtom } from "../../atom";
 
 const langArr = [
   {
@@ -56,18 +55,19 @@ const langArr = [
 ];
 
 export function Skills() {
-  const [chosenLang, setChosenLang] = useAtom(langAtom);
+  const intl = useIntl();
+
   return (
     <section className={styles.wrapper} id="skills">
       <div className={styles.skillsText}>
         <div className={styles.small}>
-          {chosenLang.smallText2.defaultMessage}
+          <FormattedMessage id="smallText2" />
         </div>
         <div className={styles.title}>
-          <WordToLetters words={chosenLang.title3.defaultMessage} />
+          <WordToLetters words={intl.formatMessage({ id: "title3" })} />
         </div>
         <div className={styles.description}>
-          {chosenLang.description3.defaultMessage}{" "}
+          <FormattedMessage id="description3" />{" "}
           <a
             href={LINKEDIN_LINK}
             className={styles.link}
@@ -76,7 +76,7 @@ export function Skills() {
           >
             Linkedin
           </a>{" "}
-          {chosenLang.description3_1.defaultMessage}
+          <FormattedMessage id="description3_1" />
         </div>
       </div>
       <div className={styles.langs}>
