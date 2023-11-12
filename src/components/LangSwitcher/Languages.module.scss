@@ -1,7 +1,6 @@
 @import "../../index.scss";
 
 .langChoice {
-  margin-right: 50px;
   display: flex;
   justify-content: space-around;
 
@@ -12,12 +11,5 @@
     border: none {
       radius: 8px;
     }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .language {
-    font-size: 24px !important;
-    font-weight: 900 !important;
   }
 }

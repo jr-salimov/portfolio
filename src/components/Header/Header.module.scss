@@ -66,9 +66,14 @@
 @media screen and (max-width: 768px) {
   .header {
     @include f-rules(space-between);
+    height: 50px;
 
     .logo {
       margin-left: -30px;
+      .logoIcon {
+        width: 20px;
+        height: 23px;
+      }
     }
 
     .mobileMenu {
