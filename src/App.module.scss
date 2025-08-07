@@ -1,0 +1,23 @@
+@use "./index.scss" as *;
+@use "./mixins.scss" as mixins;
+
+.loading {
+  @include mixins.f-rules;
+  @include mixins.a-items;
+  min-height: 200px;
+  width: 100%;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--secondary);
+  border-top: 5px solid var(--tertiary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

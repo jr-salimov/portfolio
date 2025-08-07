@@ -1,7 +1,8 @@
-@import "../../../index.scss";
+@use "../../../index.scss" as *;
+@use "../../../mixins.scss" as mixins;
 
 .menu {
-  @include f-dir;
+  @include mixins.f-dir;
   border-top: 3px solid var(--menu-toggle);
   position: absolute;
   top: 0;
@@ -12,8 +13,8 @@
   }
 
   .menuItem {
-    @include f-rules;
-    @include f-props;
+    @include mixins.f-rules;
+    @include mixins.f-props;
     overflow-y: hidden !important;
     text-decoration: none;
     color: var(--menu-toggle);

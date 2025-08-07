@@ -1,22 +1,32 @@
-@import "../index.scss";
+@use "../index.scss" as *;
+@use "../mixins.scss" as mixins;
 
 .layout {
-  @include f-props(var(--fz-normal), default);
+  @include mixins.f-props(var(--fz-normal), default);
   color: --var(--secondary);
   line-height: 1.5;
-  gap: 25px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   main {
-    @include column-aic;
-    margin: {
-      left: 18px;
-      right: 18px;
-    }
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 768px) {
   main {
-    margin-top: -50px;
+    padding: 2rem 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 4rem 0;
   }
 }

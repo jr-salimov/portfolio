@@ -1,7 +1,8 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
 
 .header {
-  @include f-rules(space-between);
+  @include mixins.f-rules(space-between);
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -10,11 +11,11 @@
   height: 75px;
   padding: 25px 45px;
   background: var(--black-100);
-  z-index: 1;
+  z-index: 10;
   box-shadow: 0 0.3px 0.3px var(--box-shadow);
 
   .logoMain {
-    @include a-items;
+    @include mixins.a-items;
     gap: 5px;
   }
 
@@ -30,6 +31,7 @@
     width: 40px;
     height: 46px;
     background-color: transparent;
+    cursor: pointer;
   }
 
   .switchInput {
@@ -39,8 +41,8 @@
 
   .logo,
   .settings {
-    @include a-items;
-    @include f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
+    @include mixins.a-items;
+    @include mixins.f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
     text-decoration: none;
     letter-spacing: 0.1rem;
     margin-top: 10px;
@@ -48,11 +50,11 @@
   }
 
   .github:hover {
-    @include filter;
+    @include mixins.filter;
   }
 
   .settings {
-    @include f-rules;
+    @include mixins.f-rules;
     position: relative;
     z-index: 1;
 
@@ -65,7 +67,7 @@
 
 @media screen and (max-width: 768px) {
   .header {
-    @include f-rules(space-between);
+    @include mixins.f-rules(space-between);
     height: 50px;
 
     .logo {

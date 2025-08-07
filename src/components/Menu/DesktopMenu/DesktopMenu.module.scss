@@ -1,8 +1,9 @@
-@import "../../../index.scss";
+@use "../../../index.scss" as *;
+@use "../../../mixins.scss" as mixins;
 
 .navigation {
-  @include a-items;
-  @include f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
+  @include mixins.a-items;
+  @include mixins.f-props(var(--fz-normal), calc(var(--fw-xbold) - 200));
   position: relative;
   gap: 2.5rem;
 

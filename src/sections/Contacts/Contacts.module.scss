@@ -1,78 +1,90 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
 
 .wrapper {
+  width: var(--size);
+  min-height: calc(100vh - var(--space-xl));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  max-width: var(--bp-xl);
+  margin: 0 auto;
+
   .title {
-    @include f-props(var(--fz-h1));
+    @include mixins.f-props(var(--fz-h1));
+    margin-bottom: var(--space-md);
   }
 
   .description {
     font-size: var(--fz-normal);
-    margin-bottom: 10px;
+    max-width: 35rem;
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
 
     .link {
       text-decoration: none;
       color: var(--tertiary);
+      transition: opacity var(--trans-dur) var(--trans-timing);
 
       &:hover {
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
   }
 
   .email {
-    @include f-props(var(--fz-h2));
-    display: flex;
+    @include mixins.f-props(var(--fz-h2));
+    @include mixins.justify;
     text-decoration: none;
     color: var(--secondary);
-    margin-top: 18px;
+    transition: transform var(--trans-dur) var(--trans-timing);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
 
     .mailIcon {
-      margin-right: 18px;
+      margin-right: var(--space-sm);
       width: 40px;
       height: 40px;
+      transition: filter var(--trans-dur) var(--trans-timing);
 
       &:hover {
-        @include filter;
-        transition: all 0.18s ease-in-out;
+        @include mixins.filter;
       }
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-  :root {
-    --fz-h1: 2rem;
-    --fz-h2: 1.5rem;
-    --fz-normal: 1rem;
-  }
-
+@media screen and (max-width: var(--bp-md)) {
   .wrapper {
-    margin-top: 50px;
+    padding: var(--space-md) var(--space-sm);
+    min-height: calc(100vh - var(--space-lg));
 
     .title {
-      text-align: left;
+      margin-bottom: var(--space-sm);
     }
 
     .description {
       max-width: 90vw;
-      .email {
-        --fz-h2: 1.5rem;
-        .mailIcon {
-          display: none;
-        }
+      margin-bottom: var(--space-sm);
+    }
+
+    .email {
+      .mailIcon {
+        width: 32px;
+        height: 32px;
+        margin-right: var(--space-xs);
       }
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: var(--bp-md)) {
   .wrapper {
-    @include margin;
-    max-width: 35%;
-    @include column-aic;
-    text-align: center;
-    .email {
-      margin-left: 75px;
-    }
+    gap: var(--space-md);
   }
 }

@@ -1,64 +1,80 @@
-@import "./mixins.scss";
-@import "./sass-variables.scss";
+@use "./mixins.scss" as mixins;
+@use "./sass-variables.scss" as *;
 
 body {
   background: var(--primary-bg);
   color: var(--secondary);
   min-height: var(--height-1);
-  // overflow-x: hidden;
-  transition: background-color var(--trans-dur), color var(--trans-dur);
-  display: flex;
-  height: 100vh;
+  transition: background-color var(--trans-dur) var(--trans-timing),
+              color var(--trans-dur) var(--trans-timing);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
 
   &:has(.switchInput:checked) {
-    --primary-bg: #ffe;
-    --secondary: invert(var(--secondary));
+    --primary-bg: rgba(255, 145, 0, 0.1);
+    --secondary: rgba(0, 0, 0, 0.95);
     --color-h1: var(--tertiary);
-    --black-100: #fff;
+    --black-100: rgba(255, 255, 255, 0.95);
     --box-shadow: rgba(0, 0, 0, 0.1);
     --color-h2: -1;
-    --menu-toggle: #ff9100;
-    --menu-toggle-secondary: #fff;
+    --menu-toggle: rgba(255, 145, 0, 0.9);
+    --menu-toggle-secondary: rgba(255, 255, 255, 0.95);
 
     header {
-      box-shadow: 0 1px 1px var(--box-shadow);
+      box-shadow: 0 1px 2px var(--box-shadow);
     }
 
     header > div > a > img,
     footer > div > a > img,
     div > div > a > img {
-      @include filter;
+      @include mixins.filter;
     }
 
     label > img {
-      @include filter(0, 0, 0, 0deg, 0%);
+      @include mixins.filter(0, 0, 0, 0deg, 0%);
     }
 
     section > div > a > img {
-      @include filter(-1);
+      @include mixins.filter(-1);
     }
 
-    section > div > div > a > img:hover {
-      @include filter(1);
+    a > div > img {
+      @include mixins.filter;
+      transition: opacity var(--trans-dur) var(--trans-timing);
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     nav > a {
+      position: relative;
+      text-decoration: none;
+      
       &::before {
         content: "";
         position: absolute;
         bottom: -2px;
+        left: 0;
         width: var(--size);
         height: 2px;
-        background-color: #000;
-        transition: transform 0.5s ease-in-out;
-        transform: scaleX(0) {
-          origin: right;
-        }
+        background-color: var(--black-100);
+        transition: transform var(--trans-dur) var(--trans-timing);
+        transform: scaleX(0);
+        transform-origin: right;
       }
+      
       &:hover::before {
-        transform: scaleX(1) {
-          origin: left;
-        }
+        transform: scaleX(1);
+        transform-origin: left;
       }
     }
   }
@@ -66,7 +82,7 @@ body {
 
 input {
   color: var(--fg);
-  font: 1rem/1.5 var(--main-font);
+  font: var(--fz-normal) var(--main-font);
 }
 
 * {
@@ -80,13 +96,45 @@ input {
 html {
   overflow-y: scroll;
   scroll-behavior: smooth;
+  font-size: 16px;
+  
+  @media (max-width: var(--bp-sm)) {
+    font-size: 14px;
+  }
 }
 
-svg {
-  .code_graph {
-    path {
-      transition: all 0.3s ease-in-out;
-      animation: float 4s ease-in-out infinite;
-    }
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Responsive container
+.container {
+  width: 100%;
+  max-width: var(--bp-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  
+  @media (max-width: var(--bp-sm)) {
+    padding: 0 var(--space-sm);
+  }
+}
+
+// Improved focus styles for accessibility
+:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 2px;
+}
+
+// Improved selection styles
+::selection {
+  background-color: var(--tertiary);
+  color: var(--black-100);
 }

@@ -1,11 +1,24 @@
-import { useAtom } from "jotai";
-import { atomWithStorage } from "jotai/utils";
-import styles from "./MobileMenu.module.scss";
+import { useAtom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
+import { useEffect } from 'react';
+import styles from './MobileMenu.module.scss';
 
-const menuAtom = atomWithStorage("menu", false);
+const menuAtom = atomWithStorage('menu', false);
 export function MobileMenu({ items }) {
   const [isOpen, setIsOpen] = useAtom(menuAtom);
   const [isClicked, setIsClicked] = useAtom(menuAtom);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isOpen]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -30,13 +43,8 @@ export function MobileMenu({ items }) {
 
       {isOpen && (
         <nav className={styles.menu}>
-          {items.map((item) => (
-            <a
-              className={styles.menuItem}
-              key={item.link}
-              href={item.link}
-              onClick={handleClick}
-            >
+          {items.map(item => (
+            <a className={styles.menuItem} key={item.link} href={item.link} onClick={handleClick}>
               {item.title}
             </a>
           ))}
