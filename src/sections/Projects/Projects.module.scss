@@ -1,22 +1,32 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
 
 .wrapper {
-  @include f-rules;
-  flex-wrap: wrap;
+  width: var(--size);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
 
   .experience {
-    @include f-props(var(--fz-h1));
+    @include mixins.f-props(var(--fz-h1));
+    margin-bottom: 2rem;
   }
 
   .description {
     font-size: var(--fz-normal);
+    max-width: 35rem;
+    margin-bottom: 2rem;
   }
 
   .link {
-    @include f-props(var(--fz-normal), calc(var(--fw-bold) - 400));
+    @include mixins.f-props(var(--fz-normal), calc(var(--fw-bold) - 400));
 
     .seeProjects {
-      @include f-rules;
+      @include mixins.f-rules;
       text-decoration: none;
       color: var(--tertiary);
     }
@@ -45,13 +55,11 @@
   }
 
   .wrapper {
-    margin-top: 110px;
-    justify-content: flex-start;
-    gap: 5px;
+    padding: 1rem;
 
     .experience {
       line-height: 0.8;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
 
     .experience,
@@ -63,9 +71,7 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    @include margin;
-    max-width: 45%;
-    text-align: center;
-    gap: 25px;
+    width: var(--size);
+    gap: 2rem;
   }
 }

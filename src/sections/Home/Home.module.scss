@@ -1,95 +1,182 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
 
+// Variables
 .wrapper {
-  @include margin;
-  width: var(--size);
+  --content-max-width: 35rem;
+  --computer-max-width: 570px;
+  
+  // Layout
+  width: 100%;
+  max-width: var(--bp-xl);
+  margin: 0 auto;
+  margin-top: -10rem;
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--space-md));
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  gap: var(--space-lg);
+  background: var(--bg-color);
+  position: relative;
+}
 
-  .content {
-    @include f-dir(column);
+// Content section
+.content {
+  @include mixins.f-dir(column);
+  flex: 1;
+  max-width: var(--content-max-width);
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  margin-top: var(--space-md);
 
-    .job {
-      @include f-props(var(--fz-h1));
-      margin-top: -10px;
-    }
+  .job {
+    @include mixins.f-props(var(--fz-h1));
+    margin-top: 0;
+    position: relative;
+  }
 
-    .description {
-      font-size: (var(--fz-normal));
-    }
+  .description {
+    font-size: var(--fz-normal);
+    margin: var(--space-sm) 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.9;
+  }
 
-    .link {
+  .link {
+    margin-top: var(--space-sm);
+    text-decoration: none;
+    color: var(--secondary);
+
+    .aboutMe {
+      @include mixins.a-items;
+      font-size: var(--fz-normal);
+      color: var(--tertiary);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 12px;
+      background: rgba(255, 145, 0, 0.1);
+      border: 1px solid var(--tertiary);
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
-      color: var(--secondary);
-      margin-top: 10px;
+      transition: all var(--trans-dur) var(--trans-timing);
 
-      .aboutMe {
-        @include a-items;
-        text-decoration: none;
-        font-size: var(--fz-normal);
-        color: var(--tertiary);
+      .arrow {
+        transform: rotate(270deg);
+        z-index: 1;
+        transition: transform var(--trans-dur) var(--trans-timing);
+      }
 
+      &:hover {
+        opacity: 0.7;
+        
         .arrow {
-          transform: rotate(270deg);
-        }
-
-        &:hover {
-          opacity: 0.5;
-
-          .arrow {
-            transition: all 0.3s ease-in-out;
-            transform: rotate(360deg);
-          }
-        }
-
-        .arrow {
-          z-index: -1;
+          transform: rotate(0deg);
         }
       }
     }
   }
+}
 
-  .computer {
-    z-index: -1;
-    width: 35rem;
+// Computer section
+.computer {
+  position: relative;
+  width: 100%;
+  max-width: var(--computer-max-width);
+  height: auto;
+  margin: 0 auto;
+  z-index: 1;
+  transition: transform var(--trans-dur) var(--trans-timing);
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 }
 
-@media screen and (max-width: 768px) {
-  :root {
-    --fz-h1: 2rem;
-    --fz-h2: 1.5rem;
-    --fz-normal: 1rem;
+// Media Queries
+@media screen and (max-width: var(--bp-xl)) {
+  .computer {
+    --computer-max-width: 550px;
   }
+}
 
+@media screen and (max-width: var(--bp-lg)) {
+  .computer {
+    --computer-max-width: 500px;
+  }
+}
+
+@media screen and (max-width: var(--bp-md)) {
   .wrapper {
-    @include f-rules(flex-start);
+    padding: var(--space-sm) var(--space-sm) var(--space-md);
+    min-height: auto;
+    gap: var(--space-md);
   }
 
   .content {
-    max-width: 90vw;
+    --content-max-width: 90vw;
+    text-align: center;
+    align-items: center;
+    margin-top: var(--space-sm);
 
     .job {
-      line-height: 0.8;
-      margin-bottom: 15px;
+      line-height: 1.2;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .description {
+      margin: var(--space-xs) 0;
     }
   }
 
   .computer {
-    display: none;
+    --computer-max-width: 400px;
+    opacity: 0.9;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .wrapper {
-    @include f-rules(space-around);
-    @include margin;
+@media screen and (max-width: var(--bp-sm)) {
+  .computer {
+    --computer-max-width: 320px;
+    opacity: 0.8;
   }
+}
 
-  .content {
-    max-width: 35rem;
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    .content, .computer {
+      transition: none;
+      animation: none;
+    }
+    
+    .link .aboutMe {
+      transition: none;
+      
+      &:hover {
+        transform: none;
+      }
+      
+      .arrow {
+        transition: none;
+      }
+    }
+  }
+}
 
-    .description {
-      margin-top: 10px;
+@media (forced-colors: active) {
+  .wrapper {
+    .link .aboutMe {
+      border: 2px solid CanvasText;
+      
+      &:hover {
+        outline: 3px solid CanvasText;
+      }
     }
   }
 }

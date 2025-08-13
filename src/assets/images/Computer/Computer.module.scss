@@ -1,0 +1,19 @@
+@use "../../../index.scss" as *;
+
+.bdl_flan {
+  transition: all 0.3s ease-in-out;
+  animation: float 3s ease-in-out infinite;
+
+  &:hover:not(#path3772):not(#path3776):not(#path3780) {
+    fill: var(--tertiary);
+  }
+}
+
+.powerButton {
+  &_main {
+    &:hover {
+      cursor: pointer;
+      fill: var(--tertiary);
+    }
+  }
+}

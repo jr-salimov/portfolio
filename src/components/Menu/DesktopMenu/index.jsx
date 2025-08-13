@@ -1,9 +1,9 @@
-import styles from "./DesktopMenu.module.scss";
+import styles from './DesktopMenu.module.scss';
 
 export function DesktopMenu({ items }) {
   return (
     <nav className={styles.navigation}>
-      {items.map((item) => (
+      {items.map(item => (
         <a className={styles.link} key={item.link} href={item.link}>
           {item.title}
         </a>

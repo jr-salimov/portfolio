@@ -1,16 +1,26 @@
-@import "../../index.scss";
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
 
 .wrapper {
   width: var(--size);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 
   .title {
+    text-align: center;
+    margin-bottom: 2rem;
+
     .name {
-      @include f-props(var(--fz-h2));
-      @include filter(var(--color-h2), 0, 0);
+      @include mixins.f-props(var(--fz-h2));
+      @include mixins.filter(var(--color-h2), 0, 0);
     }
 
     .position {
-      @include f-props(var(--fz-h1));
+      @include mixins.f-props(var(--fz-h1));
     }
 
     .small {
@@ -21,6 +31,8 @@
 
   .description {
     font-size: var(--fz-normal);
+    max-width: 35rem;
+    text-align: center;
   }
 }
 
@@ -32,12 +44,16 @@
   }
 
   .wrapper {
-    @include margin;
+    padding: 1rem;
 
     .name,
     .position {
-      @include f-props(var(--fz-h2));
+      @include mixins.f-props(var(--fz-h2));
       line-height: 0.8;
+    }
+
+    .small {
+      display: none;
     }
 
     .description {
@@ -49,9 +65,8 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    @include margin;
-    @include f-rules(space-around);
     width: var(--size);
+    gap: 2rem;
 
     .title {
       width: 35rem;

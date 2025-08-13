@@ -1,0 +1,21 @@
+@use "../../index.scss" as *;
+@use "../../mixins.scss" as mixins;
+
+.langChoice {
+  display: flex;
+  justify-content: space-around;
+
+  .language {
+    @include mixins.f-props;
+    background-color: transparent;
+    color: var(--secondary);
+    cursor: pointer;
+    border: none {
+      radius: 8px;
+    }
+
+    &:hover {
+      color: var(--tertiary);
+    }
+  }
+}
