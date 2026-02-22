@@ -14,6 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.5.9",
+<<<<<<< HEAD
     "sass": "^1.71.1"
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
@@ -44,6 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+=======
+    "sass": "^1.93.2"
+>>>>>>> cbe0de9 (fixed some parts)
   },
   "devDependencies": {
     "@types/node": "^20.11.24",

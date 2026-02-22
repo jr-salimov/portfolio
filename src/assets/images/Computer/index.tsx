@@ -3,11 +3,10 @@ import styles from "./Computer.module.scss";
 
 export function Computer() {
   const [powerOn, setPowerOn] = useState(false);
-
   const onPowerOn = () => {
     setPowerOn(!powerOn);
   };
-
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10378,6 +10377,7 @@ export function Computer() {
           {/* Start of Big Dev Logo floating animation on the computer monitor */}
           {powerOn && (
           <>
+          {/* Bottom half of the circle shadow shape on the center of the monitor */}
           <g transform="scale(1.3685)" id="g3738">
             <path
               className={styles.bdl_flan_bg}
@@ -10389,6 +10389,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Top half of the circle shadow shape on the center of the monitor */}
           <g transform="scale(1.57816)" id="g3742">
             <path
               className={styles.bdl_flan_bg}
@@ -10400,6 +10401,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Half of the circle shadow shape's circuit on its bottom edge */}
           <g transform="scale(1.36868)" id="g3746">
             <path
               className={styles.bdl_flan_bg}
@@ -10411,6 +10413,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Half of the circle shadow shape's circuit on its top edge */}
           <g transform="scale(1.57918)" id="g3750">
             <path
               className={styles.bdl_flan_bg}
@@ -10422,6 +10425,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Edge of center circle shape without its top and bottom circuits */}
           <g transform="scale(1.53471)" id="g3754">
             <path
               className={styles.bdl_flan_bg}
@@ -10433,6 +10437,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Center circle shape's edge's top circuit */}
           <g transform="scale(1.52852)" id="g3758">
             <path
               className={styles.bdl_flan_bg}
@@ -10444,6 +10449,19 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Center circle shape's edge's bottom circuit */}
+          <g transform="scale(1.51725)" id="g3766">
+            <path
+              className={styles.bdl_flan_bg}
+              id="path3768"
+              d="M10375.9 12173.5h-19.9c.1-494-123-881.6-333.3-1144.9-105.16-131.8-232.17-232.6-377.17-300.8-145-68.1-308.12-103.4-485.74-103.5-291.05 0-621.13 95.2-971.56 297.6-602.87 348-1150.5 946.8-1546.68 1633.1-396.33 686.3-641.13 1460-641.05 2156.1-.01 493.9 123.03 881.5 333.34 1144.9 105.18 131.7 232.16 232.6 377.18 300.7 145 68.1 308.12 103.4 485.74 103.5 291.05 0 621.13-95.2 971.56-297.5 602.93-348 1150.5-946.9 1546.75-1633.2 396.33-686.3 641.13-1460 640.93-2156h39.8c0 705.3-247.2 1484.5-646.33 2175.9-399.21 691.4-950.4 1294.9-1561.24 1647.7-355.05 205-691.71 302.8-991.47 302.8-182.89.1-352.08-36.4-502.68-107.2-225.99-106-409.83-289.2-536.55-539.3-126.78-250.1-196.81-567-196.82-942.3.08-705.4 247.25-1484.6 646.37-2176 399.21-691.3 950.4-1294.9 1561.24-1647.7 355.12-205 691.72-302.8 991.47-302.8 182.89-.1 352.08 36.4 502.68 107.2 226 106.1 409.83 289.2 536.53 539.3 126.8 250.1 196.8 567.1 196.8 942.4h-19.9"
+              fill="#ff0000"
+              fillOpacity={1}
+              fillRule="nonzero"
+              stroke="none"
+            />
+          </g>
+          {/* Center circle shape's main front color */}
           <g transform="scale(1.55268)" id="g3762">
             <path
               className={styles.bdl_flan_bg}
@@ -10455,17 +10473,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
-          <g transform="scale(1.51725)" id="g3766">
-            <path
-              className={styles.bdl_flan_bg}
-              id="path3768"
-              d="M10375.9 12173.5h-19.9c.1-494-123-881.6-333.3-1144.9-105.16-131.8-232.17-232.6-377.17-300.8-145-68.1-308.12-103.4-485.74-103.5-291.05 0-621.13 95.2-971.56 297.6-602.87 348-1150.5 946.8-1546.68 1633.1-396.33 686.3-641.13 1460-641.05 2156.1-.01 493.9 123.03 881.5 333.34 1144.9 105.18 131.7 232.16 232.6 377.18 300.7 145 68.1 308.12 103.4 485.74 103.5 291.05 0 621.13-95.2 971.56-297.5 602.93-348 1150.5-946.9 1546.75-1633.2 396.33-686.3 641.13-1460 640.93-2156h39.8c0 705.3-247.2 1484.5-646.33 2175.9-399.21 691.4-950.4 1294.9-1561.24 1647.7-355.05 205-691.71 302.8-991.47 302.8-182.89.1-352.08-36.4-502.68-107.2-225.99-106-409.83-289.2-536.55-539.3-126.78-250.1-196.81-567-196.82-942.3.08-705.4 247.25-1484.6 646.37-2176 399.21-691.3 950.4-1294.9 1561.24-1647.7 355.12-205 691.72-302.8 991.47-302.8 182.89-.1 352.08 36.4 502.68 107.2 226 106.1 409.83 289.2 536.53 539.3 126.8 250.1 196.8 567.1 196.8 942.4h-19.9"
-              fill="#040606"
-              fillOpacity={1}
-              fillRule="nonzero"
-              stroke="none"
-            />
-          </g>
+          {/* '<' shadow color */}
           <g
             transform="scale(1.36965)"
             id="g3770"
@@ -10481,6 +10489,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* '/' shadow color */}
           <g transform="scale(1.3516)" id="g3774" className={styles.code_graph}>
             <path
               className={styles.bdl_flan}
@@ -10492,6 +10501,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* '>' shadow color */}
           <g
             transform="scale(1.28588)"
             id="g3778"
@@ -10507,6 +10517,7 @@ export function Computer() {
               stroke="none"
             />
           </g>
+          {/* Start of '</>' shape (without its shadow) */}
           <g
             transform="scale(1.26991)"
             id="g3782"
@@ -10723,6 +10734,7 @@ export function Computer() {
               id="path3840"
               d="M8044.49 13785.8l-358.4 206.9 745.27 2307.3 359.93-207.8-746.8-2306.4"
               fill="#f4f3f2"
+              // fill="#ff0000"
               fillOpacity={1}
               fillRule="nonzero"
               stroke="none"

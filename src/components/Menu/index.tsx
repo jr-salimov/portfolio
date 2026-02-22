@@ -1,7 +1,7 @@
 import { useIntl } from 'react-intl';
 import { useWindowDimensions } from '../../hooks/useWindowDimensions';
-import { DesktopMenu } from './DesktopMenu/index.jsx';
-import { MobileMenu } from './MobileMenu/index.jsx';
+import DesktopMenu from './DesktopMenu/index.jsx';
+import MobileMenu from './MobileMenu/index.jsx';
 
 interface MenuItem {
   link: string;
@@ -19,7 +19,7 @@ export function Menu(): React.ReactElement {
     { link: '#contacts', title: intl.formatMessage({ id: 'contacts' }) },
   ];
   const { isMobileOrTablet } = useWindowDimensions();
-  const MenuView = isMobileOrTablet ? MobileMenu : DesktopMenu;
+  const MenuView : any = isMobileOrTablet ? MobileMenu : DesktopMenu;
 
   return <MenuView items={menuItems} />;
 }

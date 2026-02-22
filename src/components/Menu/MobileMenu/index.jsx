@@ -1,10 +1,10 @@
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { useEffect } from 'react';
-import styles from './MobileMenu.module.scss';
+import styles from './MobileMenu.module.scss'
 
 const menuAtom = atomWithStorage('menu', false);
-export function MobileMenu({ items }) {
+export default function MobileMenu({ items }) {
   const [isOpen, setIsOpen] = useAtom(menuAtom);
   const [isClicked, setIsClicked] = useAtom(menuAtom);
 

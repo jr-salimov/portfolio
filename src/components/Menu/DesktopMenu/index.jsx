@@ -1,6 +1,6 @@
 import styles from './DesktopMenu.module.scss';
 
-export function DesktopMenu({ items }) {
+export default function DesktopMenu({ items }) {
   return (
     <nav className={styles.navigation}>
       {items.map(item => (

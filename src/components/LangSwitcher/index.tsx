@@ -7,7 +7,7 @@ import styles from './Languages.module.scss';
 export function LangSwitcher(): JSX.Element {
   const [switched, setSwitched] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentLocale, setCurrentLocale] = useAtom(langAtom);
+  const [, setCurrentLocale] = useAtom(langAtom);
   const [name, setName] = useAtom(langName);
 
   const inEnglish = () => {
