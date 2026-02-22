@@ -7,26 +7,22 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push origin main",
+    "start": "vite",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "jotai": "^2.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.5.9",
-<<<<<<< HEAD
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push origin main",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -45,9 +41,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-=======
-    "sass": "^1.93.2"
->>>>>>> cbe0de9 (fixed some parts)
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
